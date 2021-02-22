@@ -17,6 +17,9 @@ public class Help implements Command{
 
     @Override
     public String exec(HashMap<String, LabWork> hashMap) {
-        return null;
+        FabricForCommands fabric = new FabricForCommands();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Command command: fabric.getAllCommandsArrayList()) stringBuilder.append(command.getName()).append("\n");
+        return stringBuilder.toString();
     }
 }

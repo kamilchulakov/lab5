@@ -2,7 +2,6 @@ package commands;
 
 import objects.LabWork;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -17,9 +16,7 @@ public class CMDManager {
     }
     public String getHistory(int number) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < number; i++) {
-            stringBuilder.append(commandsQueue.peek());
-        }
+        stringBuilder.append(String.valueOf(commandsQueue.peek()).repeat(Math.max(0, number)));
         return stringBuilder.toString();
     }
     public String execute(HashMap<String, LabWork> hashMap, String commandWithArgs) {
