@@ -26,7 +26,6 @@ public class CLI implements Presenter {
             } else if (scanner.hasNextLine() & listening) {
                 listenArgs(scanner, input);
             } else printDefaultMessage();
-            break;
         }
     }
 
