@@ -36,6 +36,7 @@ public class CLI implements Presenter {
     private void listenCommand(Scanner scanner) {
         showedMessage = false;
         input += scanner.nextLine();
+        System.out.println(input);
         printedDefaultMessage = false;
     }
 
