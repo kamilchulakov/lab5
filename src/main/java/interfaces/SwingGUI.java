@@ -9,7 +9,7 @@ public class SwingGUI implements Presenter{
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.setSize(300, 300);
+        frame.setSize(400, 400);
         frame.setVisible(true);
     }
 
