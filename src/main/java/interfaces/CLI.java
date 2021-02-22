@@ -21,9 +21,9 @@ public class CLI implements Presenter {
         Scanner scanner = new Scanner(System.in);
         printDefaultMessage();
         while (true) {
-            if (scanner.hasNext() & !listening) {
+            if (scanner.hasNextLine() & !listening) {
                 listenCommand(scanner);
-            } else if (scanner.hasNext() & listening) {
+            } else if (scanner.hasNextLine() & listening) {
                 listenArgs(scanner, input);
             } else printDefaultMessage();
             break;
