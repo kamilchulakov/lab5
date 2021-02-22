@@ -1,5 +1,7 @@
-package commands;
+package main;
 
+import commands.Command;
+import commands.FabricForCommands;
 import objects.LabWork;
 
 import java.util.ArrayList;

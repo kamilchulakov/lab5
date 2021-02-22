@@ -1,6 +1,5 @@
 package main;
 
-import commands.CMDManager;
 import interfaces.CLI;
 import interfaces.Presenter;
 import interfaces.SwingGUI;
