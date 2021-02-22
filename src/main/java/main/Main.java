@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        Presenter presenter = getSwingGUI();
+        Presenter presenter = getCLI();
         CMDManager cmdManager = new CMDManager();
         HashMap<String, LabWork> hashMap = new HashMap<>();
 
