@@ -25,6 +25,7 @@ public class CLI implements Presenter {
                 listenCommand(scanner);
             } else if (scanner.hasNextLine() & listening) {
                 listenArgs(scanner, input);
+                System.out.println("Something is working wrongly");
             } else printDefaultMessage();
         }
     }
@@ -40,7 +41,7 @@ public class CLI implements Presenter {
 
     private void printDefaultMessage() {
         if (!printedDefaultMessage) {
-            System.out.println("Type a command: ");
+            System.out.print("Type a command: ");
             printedDefaultMessage = true;
         }
     }
