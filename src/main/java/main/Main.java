@@ -19,7 +19,14 @@ public class Main {
         // presenter.display(filename);
         // HashMap<String, LabWork> hashMap = getStorageFromJsonFile(filename);
         // outputStream.println(cmdManager.execute(hashMap, "history"));
-        presenter.display(cmdManager.execute(hashMap, "help"));
+        while (true) {
+            if (!presenter.isListening() & !presenter.getCommandText().equals("")) {
+                presenter.display(cmdManager.execute(hashMap, presenter.getCommandText()));
+                presenter.resetInput();
+            } else {
+                System.out.print("");
+            }
+        }
     }
 
     private static Presenter getCLI() {
