@@ -19,6 +19,7 @@ public class CLI implements Presenter {
 
     private void listenForAnything() {
         Scanner scanner = new Scanner(System.in);
+        printDefaultMessage();
         while (true) {
             if (scanner.hasNext() & !listening) {
                 listenCommand(scanner);
@@ -33,6 +34,7 @@ public class CLI implements Presenter {
     }
 
     private void listenCommand(Scanner scanner) {
+        showedMessage = false;
         input += scanner.nextLine();
         printedDefaultMessage = false;
     }
@@ -49,6 +51,7 @@ public class CLI implements Presenter {
         if (!showedMessage) {
             showedMessage = true;
             System.out.println(message);
+            printedDefaultMessage = false;
         }
     }
 
