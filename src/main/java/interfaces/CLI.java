@@ -20,13 +20,11 @@ public class CLI implements Presenter {
     private void listenForAnything() {
         Scanner scanner = new Scanner(System.in);
         printDefaultMessage();
-        while (true) {
-            if (scanner.hasNextLine() & !listening) {
-                listenCommand(scanner);
-            } else if (scanner.hasNextLine() & listening) {
-                listenArgs(scanner, input);
-                System.out.println("Something is working wrongly");
-            } else printDefaultMessage();
+        if (scanner.hasNextLine() & !listening) {
+            listenCommand(scanner);
+        } else if (scanner.hasNextLine() & listening) {
+            listenArgs(scanner, input);
+            System.out.println("Something is working wrongly");
         }
     }
 
@@ -36,8 +34,9 @@ public class CLI implements Presenter {
     private void listenCommand(Scanner scanner) {
         showedMessage = false;
         input += scanner.nextLine();
-        System.out.println(input);
+
         printedDefaultMessage = false;
+        //if (!listening) printDefaultMessage();
     }
 
     private void printDefaultMessage() {

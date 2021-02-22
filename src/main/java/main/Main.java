@@ -14,7 +14,7 @@ public class Main {
         CMDManager cmdManager = new CMDManager();
         HashMap<String, LabWork> hashMap = new HashMap<>();
 
-        String filename = args[0];
+        // String filename = args[0];
         // presenter.display(filename);
         // HashMap<String, LabWork> hashMap = getStorageFromJsonFile(filename);
         // outputStream.println(cmdManager.execute(hashMap, "history"));
@@ -22,8 +22,7 @@ public class Main {
             if (!presenter.isListening() & !presenter.getCommandText().equals("")) {
                 presenter.display(cmdManager.execute(hashMap, presenter.getCommandText()));
                 presenter.resetInput();
-            } else {
-                System.out.print("");
+                if (presenter.getClass().equals(CLI.class)) presenter = getCLI();
             }
         }
     }
