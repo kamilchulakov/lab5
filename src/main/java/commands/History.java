@@ -12,7 +12,7 @@ public class History implements Command{
 
     @Override
     public String getDescription() {
-        return "history is good! learn history!";
+        return "history - a command to show history is good! learn history!";
     }
 
     @Override
