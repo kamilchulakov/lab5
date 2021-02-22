@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        PresenterFabric fabric = new PresenterFabric(PresenterFabric.Type.CLI);
+        PresenterFabric fabric = new PresenterFabric();
         Presenter presenter = fabric.getPresenter();
         CMDManager cmdManager = new CMDManager();
         HashMap<String, LabWork> hashMap = new HashMap<>();
