@@ -21,7 +21,7 @@ public class CMDManager {
     }
     public String execute(HashMap<String, LabWork> hashMap, String commandWithArgs) {
         String justCommand = commandWithArgs;
-        if (justCommand.equals("history")) return getHistory(7);
+        //if (justCommand.equals("history")) return getHistory(7);
         Command command = getCommandByString(justCommand);
         commandsQueue.add(command);
         return command.exec(hashMap);
