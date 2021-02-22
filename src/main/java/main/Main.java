@@ -5,8 +5,6 @@ import interfaces.CLI;
 import interfaces.Presenter;
 import interfaces.SwingGUI;
 
-import java.io.InputStream;
-import java.io.PrintStream;
 
 public class Main {
     public static void main(String[] args) {

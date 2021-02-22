@@ -1,7 +1,5 @@
 package interfaces;
 
-import java.io.InputStream;
-import java.io.PrintStream;
 
 public class CLI implements Presenter {
     @Override
