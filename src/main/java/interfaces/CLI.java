@@ -3,14 +3,9 @@ package interfaces;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-public class CLI implements UsableInterface{
+public class CLI implements Presenter {
     @Override
-    public InputStream getInputStream() {
-        return System.in;
-    }
-
-    @Override
-    public PrintStream getOutputStream() {
-        return System.out;
+    public void display(String message) {
+        System.out.println(message);
     }
 }
