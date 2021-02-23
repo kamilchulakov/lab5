@@ -4,13 +4,12 @@ package interfaces;
 import java.util.Scanner;
 
 public class CLI extends AbstractPresenter {
-    private final Scanner scanner;
+    private Scanner scanner;
     public CLI() {
-        scanner = new Scanner(System.in);
-        listenForAnything();
+        start();
     }
 
-    private void listenForAnything() {
+    protected void start() {
         printDefaultMessage();
         if (scanner.hasNextLine() & !isListening()) {
             listenCommand();
@@ -58,5 +57,10 @@ public class CLI extends AbstractPresenter {
     @Override
     public boolean needsFullReset() {
         return true;
+    }
+
+    @Override
+    protected void createUI() {
+        scanner = new Scanner(System.in);
     }
 }

@@ -5,35 +5,22 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class SwingGUI extends AbstractPresenter {
-    private final JFrame frame;
+    private JFrame frame;
     public SwingGUI() {
-        frame = new JFrame("Lab5");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createUI();
+        start();
+    }
 
+    @Override
+    protected void start() {
         frame.setSize(400, 400);
         frame.setVisible(true);
     }
 
     @Override
-    public void display(String message) {
-        if (!presenterStatus.hasShowedMessage()) {
-            presenterStatus.setShowedMessage(true);
-            JOptionPane.showMessageDialog(frame, message);
-        }
-    }
-
-    @Override
-    public String getCommandText() {
-        return presenterStatus.getCommandText();
-    }
-
-    @Override
-    public boolean isListening() {
-        return presenterStatus.isListening();
-    }
-
-    private void createUI() {
+    protected void createUI() {
+        frame = new JFrame("Lab5");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
         LayoutManager layout = new FlowLayout();
         panel.setLayout(layout);
@@ -53,6 +40,24 @@ public class SwingGUI extends AbstractPresenter {
 
         panel.add(button);
         frame.getContentPane().add(panel, BorderLayout.CENTER);
+    }
+
+    @Override
+    public void display(String message) {
+        if (!presenterStatus.hasShowedMessage()) {
+            presenterStatus.setShowedMessage(true);
+            JOptionPane.showMessageDialog(frame, message);
+        }
+    }
+
+    @Override
+    public String getCommandText() {
+        return presenterStatus.getCommandText();
+    }
+
+    @Override
+    public boolean isListening() {
+        return presenterStatus.isListening();
     }
 
     private String askForCommand() {
