@@ -18,7 +18,7 @@ public class CMDManager {
         Iterator<Command> itr = commandsQueue.iterator();
         int i = 0;
         while (itr.hasNext() & i < number) {
-            stringBuilder.append(itr.next().getName() + "\n");
+            stringBuilder.append(itr.next().getName()).append("\n");
             System.out.print("");
             i++;
         }
