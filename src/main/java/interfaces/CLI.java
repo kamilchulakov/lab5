@@ -10,6 +10,7 @@ public class CLI extends AbstractPresenter {
     }
 
     protected void start() {
+        scanner = new Scanner(System.in);
         printDefaultMessage();
         if (scanner.hasNextLine() & !isListening()) {
             listenCommand();
