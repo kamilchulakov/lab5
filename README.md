@@ -12,9 +12,10 @@
 
 **Some changes**: 3 :hankey:
 
-**It works**: 4 :smiley
+**It works**: 4 :relaxed:
 
 **It doesn't work**: 2 :rage:
 
 **Refactoring**: 7 :recycle:
 
+**Fix**: 2 :sweat_drops:
