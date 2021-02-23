@@ -83,4 +83,9 @@ public class SwingGUI extends AbstractPresenter {
         input = "";
     }
 
+    @Override
+    public boolean needsFullReset() {
+        return false;
+    }
+
 }

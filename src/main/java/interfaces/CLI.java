@@ -60,4 +60,9 @@ public class CLI extends AbstractPresenter {
     public void resetInput() {
         input = "";
     }
+
+    @Override
+    public boolean needsFullReset() {
+        return true;
+    }
 }

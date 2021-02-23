@@ -21,7 +21,7 @@ public class Main {
             if (!presenter.isListening() & !presenter.getCommandText().equals("")) {
                 presenter.display(cmdManager.execute(hashMap, presenter.getCommandText()));
                 presenter.resetInput();
-                if (presenter.getClass().equals(CLI.class)) presenter = fabric.getPresenter();
+                if (presenter.needsFullReset()) presenter = fabric.getPresenter();
             }
         }
     }
