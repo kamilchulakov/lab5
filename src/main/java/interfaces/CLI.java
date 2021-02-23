@@ -4,25 +4,26 @@ package interfaces;
 import java.util.Scanner;
 
 public class CLI extends AbstractPresenter {
+    private final Scanner scanner;
     public CLI() {
+        scanner = new Scanner(System.in);
         listenForAnything();
     }
 
     private void listenForAnything() {
-        Scanner scanner = new Scanner(System.in);
         printDefaultMessage();
         if (scanner.hasNextLine() & !isListening()) {
-            listenCommand(scanner);
+            listenCommand();
         } else if (scanner.hasNextLine() & isListening()) {
-            listenArgs(scanner);
+            listenArgs();
             System.out.println("Something is working wrongly");
         }
     }
 
-    private void listenArgs(Scanner scanner) {
+    private void listenArgs() {
     }
 
-    private void listenCommand(Scanner scanner) {
+    private void listenCommand() {
         presenterStatus.setShowedMessage(false);
         presenterStatus.addToInput(scanner.nextLine());
     }
