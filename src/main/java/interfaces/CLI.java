@@ -7,13 +7,11 @@ public class CLI extends AbstractPresenter {
     private String input;
     private boolean listening;
     private boolean showedMessage;
-    private boolean printedDefaultMessage;
 
     public CLI() {
         input = "";
         listening = false;
         showedMessage = false;
-        printedDefaultMessage = false;
         listenForAnything();
     }
 
@@ -34,16 +32,10 @@ public class CLI extends AbstractPresenter {
     private void listenCommand(Scanner scanner) {
         showedMessage = false;
         input += scanner.nextLine();
-
-        printedDefaultMessage = false;
-        //if (!listening) printDefaultMessage();
     }
 
     private void printDefaultMessage() {
-        if (!printedDefaultMessage) {
-            System.out.print("Type a command: ");
-            printedDefaultMessage = true;
-        }
+        System.out.print("Type a command: ");
     }
 
     @Override
@@ -51,7 +43,6 @@ public class CLI extends AbstractPresenter {
         if (!showedMessage) {
             showedMessage = true;
             System.out.println(message);
-            printedDefaultMessage = false;
         }
     }
 
