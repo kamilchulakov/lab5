@@ -19,11 +19,15 @@ public class Main {
         // outputStream.println(cmdManager.execute(hashMap, "history"));
         while (true) {
             if (!presenter.isListening() & !presenter.getCommandText().equals("")) {
-                presenter.display(cmdManager.execute(hashMap, presenter.getCommandText()));
+                String command = presenter.getCommandText();
+                if (command.equals("exit")) break;
+                presenter.display(cmdManager.execute(hashMap, command));
                 presenter.resetInput();
                 if (presenter.needsFullReset()) presenter = fabric.getPresenter();
             }
         }
+        System.exit(0);
+
     }
 
     //private static HashMap<String, LabWork> getStorageFromJsonFile(String filename) {}
