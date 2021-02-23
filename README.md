@@ -16,6 +16,6 @@
 
 **It doesn't work**: 2 :rage:
 
-**Refactoring**: 7 :recycle:
+**Refactoring**: 8 :recycle:
 
 **Fix**: 2 :sweat_drops:

@@ -4,10 +4,7 @@ import commands.Command;
 import commands.FabricForCommands;
 import objects.LabWork;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class CMDManager {
     private Queue<Command> commandsQueue = new LinkedList<>();
@@ -18,15 +15,28 @@ public class CMDManager {
     }
     public String getHistory(int number) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.valueOf(commandsQueue.peek()).repeat(Math.max(0, number)));
+        Iterator<Command> itr = commandsQueue.iterator();
+        int i = 0;
+        while (itr.hasNext() & i < number) {
+            stringBuilder.append(itr.next().getName() + "\n");
+            System.out.print("");
+            i++;
+        }
         return stringBuilder.toString();
     }
     public String execute(HashMap<String, LabWork> hashMap, String commandWithArgs) {
+        //System.out.println(commandWithArgs);
         String justCommand = commandWithArgs;
-        //if (justCommand.equals("history")) return getHistory(7);
         Command command = getCommandByString(justCommand);
         commandsQueue.add(command);
-        return command.exec(hashMap);
+        if (justCommand.equals("history")) return getHistory(7);
+        String result;
+        try {
+            result = command.exec(hashMap);
+        } catch (NullPointerException e) {
+            result = "Command was not found. Try again.";
+        }
+        return result;
     }
     private Command getCommandByString(String command) {
         for (Command command1: commands) {
