@@ -4,34 +4,27 @@ package interfaces;
 import java.util.Scanner;
 
 public class CLI extends AbstractPresenter {
-    private String input;
-    private boolean listening;
-    private boolean showedMessage;
-
     public CLI() {
-        input = "";
-        listening = false;
-        showedMessage = false;
         listenForAnything();
     }
 
     private void listenForAnything() {
         Scanner scanner = new Scanner(System.in);
         printDefaultMessage();
-        if (scanner.hasNextLine() & !listening) {
+        if (scanner.hasNextLine() & !isListening()) {
             listenCommand(scanner);
-        } else if (scanner.hasNextLine() & listening) {
-            listenArgs(scanner, input);
+        } else if (scanner.hasNextLine() & isListening()) {
+            listenArgs(scanner);
             System.out.println("Something is working wrongly");
         }
     }
 
-    private void listenArgs(Scanner scanner, String input) {
+    private void listenArgs(Scanner scanner) {
     }
 
     private void listenCommand(Scanner scanner) {
-        showedMessage = false;
-        input += scanner.nextLine();
+        presenterStatus.setShowedMessage(false);
+        presenterStatus.addToInput(scanner.nextLine());
     }
 
     private void printDefaultMessage() {
@@ -40,25 +33,25 @@ public class CLI extends AbstractPresenter {
 
     @Override
     public void display(String message) {
-        if (!showedMessage) {
-            showedMessage = true;
+        if (!presenterStatus.hasShowedMessage()) {
+            presenterStatus.setShowedMessage(true);
             System.out.println(message);
         }
     }
 
     @Override
     public String getCommandText() {
-        return input;
+        return presenterStatus.getCommandText();
     }
 
     @Override
     public boolean isListening() {
-        return listening;
+        return presenterStatus.isListening();
     }
 
     @Override
     public void resetInput() {
-        input = "";
+        presenterStatus.resetInput();
     }
 
     @Override
