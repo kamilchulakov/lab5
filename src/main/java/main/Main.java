@@ -20,13 +20,11 @@ public class Main {
         while (true) {
             if (!presenter.isListening() & !presenter.getCommandText().equals("")) {
                 String command = presenter.getCommandText();
-                if (command.equals("exit")) break;
                 presenter.display(cmdManager.execute(hashMap, command));
                 presenter.resetInput();
                 if (presenter.needsFullReset()) presenter = fabric.getPresenter();
             }
         }
-        System.exit(0);
 
     }
 

@@ -17,6 +17,7 @@ public class Exit implements Command{
 
     @Override
     public String exec(HashMap<String, LabWork> hashMap) {
+        System.exit(0);
         return "just exit by clicking!";
     }
 }
