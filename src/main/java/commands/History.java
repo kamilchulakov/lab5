@@ -12,11 +12,11 @@ public class History implements Command{
 
     @Override
     public String getDescription() {
-        return "history - a command to show history is good! learn history!";
+        return "history - a command to show history of commands usage!";
     }
 
     @Override
     public String exec(HashMap<String, LabWork> hashMap) {
-        return "nothing is done, don't be angry!";
+        return "this message shouldn't be here!";
     }
 }

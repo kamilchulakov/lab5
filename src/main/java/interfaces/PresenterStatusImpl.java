@@ -45,7 +45,7 @@ public class PresenterStatusImpl implements PresenterStatus{
     public String getCommandText() {
         input = input.strip();
         input = input.toLowerCase();
-        System.out.print(input);
+        System.out.print("");
         return input;
     }
 }

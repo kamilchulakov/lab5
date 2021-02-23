@@ -12,7 +12,7 @@ public class Exit implements Command{
 
     @Override
     public String getDescription() {
-        return "exit - a command to exit everything except this world.";
+        return "exit - a command to exit everything.";
     }
 
     @Override

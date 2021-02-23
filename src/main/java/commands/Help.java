@@ -12,14 +12,16 @@ public class Help implements Command{
 
     @Override
     public String getDescription() {
-        return "help - a command which gives an information about\n every single command which is supported in this app.";
+        return "help - a command which gives an information about\n" +
+                "every single command which is supported in this app.";
     }
 
     @Override
     public String exec(HashMap<String, LabWork> hashMap) {
         FabricForCommands fabric = new FabricForCommands();
         StringBuilder stringBuilder = new StringBuilder();
-        for (Command command: fabric.getAllCommandsArrayList()) stringBuilder.append(command.getDescription()).append("\n");
+        for (Command command: fabric.getAllCommandsArrayList())
+            stringBuilder.append(command.getDescription()).append("\n");
         return stringBuilder.toString();
     }
 }
