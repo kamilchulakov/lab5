@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class SwingGUI implements Presenter{
+public class SwingGUI extends AbstractPresenter {
     private final JFrame frame;
     private String input;
     private boolean listening;

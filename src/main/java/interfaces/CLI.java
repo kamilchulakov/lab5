@@ -3,7 +3,7 @@ package interfaces;
 
 import java.util.Scanner;
 
-public class CLI implements Presenter {
+public class CLI extends AbstractPresenter {
     private String input;
     private boolean listening;
     private boolean showedMessage;
