@@ -6,4 +6,5 @@ public interface Presenter {
     String getCommandText();
     boolean isListening();
     void resetInput();
+    boolean needsFullReset();
 }
