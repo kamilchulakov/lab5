@@ -10,7 +10,7 @@ public class Show implements Command{
 
     @Override
     public String getDescription() {
-        return "show is a command which shows the collection items";
+        return "show - a command which shows the collection items";
     }
 
     @Override
