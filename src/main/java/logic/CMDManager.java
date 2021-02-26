@@ -32,7 +32,8 @@ public class CMDManager {
         if (justCommand.equals("history")) return getHistory(7);
         String result;
         try {
-            if (justCommand.equals("remove_key")) result = command.exec(editor, getCommandArg(commandWithArgs));
+            if (needsArg(justCommand))
+                result = command.exec(editor, getCommandArg(commandWithArgs));
             else result = command.exec(editor, null);
         } catch (NullPointerException e) {
             result = "Command was not found. Try again.";
@@ -60,6 +61,10 @@ public class CMDManager {
 
     private String getCommandArg(String line) {
         return line.toLowerCase().strip().split(" ")[1];
+    }
+
+    private boolean needsArg(String commandName) {
+        return commandName.equals("remove_key") | commandName.equals("remove_lower");
     }
 
     public boolean needsArgs(String command) {
