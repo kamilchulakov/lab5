@@ -2,7 +2,7 @@
 
 **Added**: 8 :heavy_check_mark:
 
-**Deleted**: 1 :heavy_multiplication_x:
+**Deleted**: 2 :heavy_multiplication_x:
 
 **Tried**: 5 :sob:
 
