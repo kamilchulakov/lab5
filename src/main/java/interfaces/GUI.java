@@ -6,12 +6,12 @@ public class GUI extends AbstractUI{
     JFrame frame;
     @Override
     protected String getArg(String arg) {
-        return null;
+        return getInput("Type an arg", "arg");
     }
 
     @Override
     protected String getCommand() {
-        return null;
+        return getInput("Type a command", "help");
     }
 
     @Override
@@ -19,11 +19,14 @@ public class GUI extends AbstractUI{
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
-        frame.setVisible(true);
     }
 
     @Override
     public void display(String message) {
+        JOptionPane.showMessageDialog(frame, message);
+    }
 
+    private String getInput(String heading, String basicValue) {
+        return JOptionPane.showInputDialog(heading, basicValue);
     }
 }
