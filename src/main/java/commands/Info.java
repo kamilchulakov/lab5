@@ -21,7 +21,7 @@ public class Info implements Command{
     }
 
     @Override
-    public String exec(Editor editor) {
+    public String exec(Editor editor, String args) {
             return String.format("Collection info:\nType: %s\nDate: %s\nSize: %s",
                 editor.getCollection().getClass().getName(), calendar.getTime().toString(), editor.getCollection().size());
     }

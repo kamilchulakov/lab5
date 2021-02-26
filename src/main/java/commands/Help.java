@@ -18,7 +18,7 @@ public class Help implements Command{
     }
 
     @Override
-    public String exec(Editor editor) {
+    public String exec(Editor editor, String args) {
         FabricForCommands fabric = new FabricForCommands();
         StringBuilder stringBuilder = new StringBuilder();
         for (Command command: fabric.getAllCommandsArrayList())

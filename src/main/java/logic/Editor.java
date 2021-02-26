@@ -23,4 +23,8 @@ public class Editor {
     public String getStringCollection() {
         return collection.toString();
     }
+
+    public void removeElementByKey(String key) {
+        collection.remove(key);
+    }
 }

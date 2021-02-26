@@ -26,13 +26,14 @@ public class CMDManager {
     }
     public String execute(Editor editor, String commandWithArgs) {
         //System.out.println(commandWithArgs);
-        String justCommand = commandWithArgs;
+        String justCommand = getPureCommandName(commandWithArgs);
         Command command = getCommandByString(justCommand);
         commandsQueue.add(command);
         if (justCommand.equals("history")) return getHistory(7);
         String result;
         try {
-            result = command.exec(editor);
+            if (justCommand.equals("remove_key")) result = command.exec(editor, getCommandArg(commandWithArgs));
+            else result = command.exec(editor, null);
         } catch (NullPointerException e) {
             result = "Command was not found. Try again.";
         }
@@ -48,8 +49,17 @@ public class CMDManager {
     }
 
     public boolean validate(String command) {
-        Command command1 = getCommandByString(command);
+        String commandName = command.toLowerCase().strip().split(" ")[0];
+        Command command1 = getCommandByString(commandName);
         return command1 != null;
+    }
+
+    private String getPureCommandName(String line) {
+        return line.toLowerCase().strip().split(" ")[0];
+    }
+
+    private String getCommandArg(String line) {
+        return line.toLowerCase().strip().split(" ")[1];
     }
 
     public boolean needsArgs(String command) {

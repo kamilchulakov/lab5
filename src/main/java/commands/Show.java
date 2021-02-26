@@ -14,7 +14,7 @@ public class Show implements Command{
     }
 
     @Override
-    public String exec(Editor editor) {
+    public String exec(Editor editor, String args) {
         return editor.getStringCollection();
     }
 }

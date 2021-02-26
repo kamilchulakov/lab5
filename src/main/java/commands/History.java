@@ -17,7 +17,7 @@ public class History implements Command{
     }
 
     @Override
-    public String exec(Editor editor) {
+    public String exec(Editor editor, String args) {
         return "this message shouldn't be here!";
     }
 }

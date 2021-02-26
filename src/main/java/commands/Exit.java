@@ -17,7 +17,7 @@ public class Exit implements Command{
     }
 
     @Override
-    public String exec(Editor editor) {
+    public String exec(Editor editor, String args) {
         System.exit(0);
         return "just exit by clicking!";
     }
