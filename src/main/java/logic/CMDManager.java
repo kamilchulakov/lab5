@@ -47,4 +47,12 @@ public class CMDManager {
         return null;
     }
 
+    public boolean validate(String command) {
+        Command command1 = getCommandByString(command);
+        return command1 != null;
+    }
+
+    public boolean needsArgs(String command) {
+        return false;
+    }
 }
