@@ -9,6 +9,7 @@ public abstract class AbstractUI implements UI{
     public AbstractUI() {
         cmdManager = new CMDManager();
         editor = new Editor();
+        createUI();
     }
 
     @Override
@@ -41,6 +42,7 @@ public abstract class AbstractUI implements UI{
 
     protected abstract String getArg(String arg);
     protected abstract String getCommand();
+    protected abstract void createUI();
 
     private boolean isValidCommand(String command) {
         return cmdManager.validate(command);

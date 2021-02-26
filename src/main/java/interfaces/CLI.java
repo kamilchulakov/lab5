@@ -5,11 +5,6 @@ import java.util.Scanner;
 public class CLI extends AbstractUI{
     public Scanner scanner;
 
-    public CLI() {
-        super();
-        scanner = new Scanner(System.in);
-    }
-
     @Override
     protected String getArg(String arg) {
         System.out.print("Type an arg: ");
@@ -20,6 +15,11 @@ public class CLI extends AbstractUI{
     protected String getCommand() {
         System.out.print("Type a command: ");
         return getInput();
+    }
+
+    @Override
+    protected void createUI() {
+        scanner = new Scanner(System.in);
     }
 
     @Override
