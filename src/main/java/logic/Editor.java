@@ -27,4 +27,8 @@ public class Editor {
     public void removeElementByKey(String key) {
         collection.remove(key);
     }
+
+    public void clear() {
+        collection.clear();
+    }
 }
