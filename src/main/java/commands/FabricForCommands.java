@@ -20,5 +20,6 @@ public class FabricForCommands {
         list.add(new Help());
         list.add(new History());
         list.add(new Exit());
+        list.add(new Show());
     }
 }

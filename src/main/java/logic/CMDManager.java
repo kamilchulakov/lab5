@@ -13,7 +13,7 @@ public class CMDManager {
         FabricForCommands fabricForCommands = new FabricForCommands();
         commands.addAll(fabricForCommands.getAllCommandsArrayList());
     }
-    public String getHistory(int number) {
+    private String getHistory(int number) {
         StringBuilder stringBuilder = new StringBuilder();
         Iterator<Command> itr = commandsQueue.iterator();
         int i = 0;
