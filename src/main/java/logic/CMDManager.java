@@ -1,4 +1,4 @@
-package main;
+package logic;
 
 import commands.Command;
 import commands.FabricForCommands;
@@ -24,7 +24,7 @@ public class CMDManager {
         }
         return stringBuilder.toString();
     }
-    public String execute(HashMap<String, LabWork> hashMap, String commandWithArgs) {
+    public String execute(Editor editor, String commandWithArgs) {
         //System.out.println(commandWithArgs);
         String justCommand = commandWithArgs;
         Command command = getCommandByString(justCommand);
@@ -32,7 +32,7 @@ public class CMDManager {
         if (justCommand.equals("history")) return getHistory(7);
         String result;
         try {
-            result = command.exec(hashMap);
+            result = command.exec(editor);
         } catch (NullPointerException e) {
             result = "Command was not found. Try again.";
         }

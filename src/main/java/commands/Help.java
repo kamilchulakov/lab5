@@ -1,5 +1,6 @@
 package commands;
 
+import logic.Editor;
 import objects.LabWork;
 
 import java.util.HashMap;
@@ -17,7 +18,7 @@ public class Help implements Command{
     }
 
     @Override
-    public String exec(HashMap<String, LabWork> hashMap) {
+    public String exec(Editor editor) {
         FabricForCommands fabric = new FabricForCommands();
         StringBuilder stringBuilder = new StringBuilder();
         for (Command command: fabric.getAllCommandsArrayList())

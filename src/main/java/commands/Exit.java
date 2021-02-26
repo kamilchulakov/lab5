@@ -1,5 +1,6 @@
 package commands;
 
+import logic.Editor;
 import objects.LabWork;
 
 import java.util.HashMap;
@@ -16,7 +17,7 @@ public class Exit implements Command{
     }
 
     @Override
-    public String exec(HashMap<String, LabWork> hashMap) {
+    public String exec(Editor editor) {
         System.exit(0);
         return "just exit by clicking!";
     }
