@@ -50,17 +50,17 @@ public class CMDManager {
     }
 
     public boolean validate(String command) {
-        String commandName = command.toLowerCase().strip().split(" ")[0];
+        String commandName = command.toLowerCase().trim().split(" ")[0];
         Command command1 = getCommandByString(commandName);
         return command1 != null;
     }
 
     private String getPureCommandName(String line) {
-        return line.toLowerCase().strip().split(" ")[0];
+        return line.toLowerCase().trim().split(" ")[0];
     }
 
     private String getCommandArg(String line) {
-        return line.toLowerCase().strip().split(" ")[1];
+        return line.toLowerCase().trim().split(" ")[1];
     }
 
     private boolean needsArg(String commandName) {
