@@ -1,3 +1,7 @@
+## Status of last deployment:
+Security Analysis<br>
+<img src="https://github.com/ulyanovskk/lab5/workflows/CodeQL/badge.svg"></br>
+
 ### Commit statistics:
 
 **Added**: 8 :heavy_check_mark:
