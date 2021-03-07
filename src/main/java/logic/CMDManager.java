@@ -50,6 +50,7 @@ public class CMDManager {
     }
 
     public boolean validate(String command) {
+        if (command == null) System.exit(0);
         String commandName = command.toLowerCase().trim().split(" ")[0];
         Command command1 = getCommandByString(commandName);
         return command1 != null;
