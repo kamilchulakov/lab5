@@ -11,9 +11,12 @@ import java.util.Scanner;
 public abstract class AbstractUI implements UI{
     CMDManager cmdManager;
     Editor editor;
+    ArrayList<String> cachedFilenames;
+
     public AbstractUI() {
         cmdManager = new CMDManager();
         editor = new Editor();
+        cachedFilenames = new ArrayList<>();
         createUI();
     }
 
@@ -23,6 +26,7 @@ public abstract class AbstractUI implements UI{
             String input = askForCommand();
             if (isValidCommand(input)) {
                 if (cmdManager.isExecuteScript(input)) {
+                    cachedFilenames = new ArrayList<>();
                     executeScript(input);
                 }
                 else {
@@ -60,6 +64,13 @@ public abstract class AbstractUI implements UI{
 
     private void executeScript(String input) {
         String filename = input.split(" ")[1];
+        if (!cachedFilenames.contains(filename)) {
+            cachedFilenames.add(filename);
+            execute_script_loop(filename);
+        } else display("Prevented StackOverflow! Filename: " + filename);
+    }
+
+    private void execute_script_loop(String filename) {
         try {
             File file = new File(filename);
             Scanner myReader = new Scanner(file);
