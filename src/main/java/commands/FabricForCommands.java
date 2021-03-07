@@ -25,5 +25,6 @@ public class FabricForCommands {
         list.add(new RemoveByKey());
         list.add(new Clear());
         list.add(new RemoveLower());
+        list.add(new ExecuteScript());
     }
 }

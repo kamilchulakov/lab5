@@ -3,6 +3,11 @@ package interfaces;
 import logic.CMDManager;
 import logic.Editor;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public abstract class AbstractUI implements UI{
     CMDManager cmdManager;
     Editor editor;
@@ -17,8 +22,13 @@ public abstract class AbstractUI implements UI{
         while (true) {
             String input = askForCommand();
             if (isValidCommand(input)) {
-                String result = cmdManager.execute(editor, input);
-                display(result);
+                if (cmdManager.isExecuteScript(input)) {
+                    executeScript(input);
+                }
+                else {
+                    String result = cmdManager.execute(editor, input);
+                    display(result);
+                }
             }
         }
     }
@@ -47,6 +57,35 @@ public abstract class AbstractUI implements UI{
     private boolean isValidCommand(String command) {
         return cmdManager.validate(command);
     }
+
+    private void executeScript(String input) {
+        String filename = input.split(" ")[1];
+        try {
+            File file = new File(filename);
+            Scanner myReader = new Scanner(file);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                if (isValidCommand(data)) {
+                    if (needsArgs(data)) {
+                        data += askForArg("arg");
+                    }
+                    if (isValidCommand(data)) {
+                        if (cmdManager.isExecuteScript(data)) {
+                            executeScript(data);
+                        }
+                        else {
+                            String result = cmdManager.execute(editor, data);
+                            display(result);
+                        }
+                    }
+                }
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            display("Try again! Bad filename: " + filename + ".");
+        }
+    }
+
     private boolean needsArgs(String command) {
         return cmdManager.needsArgs(command);
     }

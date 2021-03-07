@@ -71,4 +71,8 @@ public class CMDManager {
     public boolean needsArgs(String command) {
         return false;
     }
+
+    public boolean isExecuteScript(String input) {
+        return input.split(" ")[0].equals("execute_script");
+    }
 }
