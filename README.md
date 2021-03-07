@@ -20,22 +20,24 @@ QA Testing:<br>
 
 ## Commit statistics:
 
-**Added**: 8 :heavy_check_mark:
+**Added**: 19 :heavy_check_mark:
 
-**Deleted**: 1 :heavy_multiplication_x:
+**Deleted**: 3 :heavy_multiplication_x:
 
-**Tried**: 5 :sob:
+**Tried**: 7 :sob:
 
 **Moved**: 1 :-1:
 
-**Modified**: 4 :+1:
+**Modified**: 6 :+1:
 
-**Some changes**: 5 :hankey:
+**Some changes**: 6 :hankey:
 
-**It works**: 6 :relaxed:
+**It works**: 9 :relaxed:
 
 **It doesn't work**: 2 :rage:
 
-**Refactoring**: 9 :recycle:
+**Refactoring**: 11 :recycle:
 
-**Fix**: 3 :sweat_drops:
+**Fix**: 8 :sweat_drops:
+
+**Update**: 2 :yum:
