@@ -1,6 +1,8 @@
 ## Status of last deployment:
-Security Analysis<br>
+Security Analysis:<br>
 <img src="https://github.com/ulyanovskk/lab5/workflows/CodeQL/badge.svg"></br>
+QA Testing:<br>
+<img src="https://github.com/ulyanovskk/lab5/workflows/Testing/badge.svg"></br>
 
 ### Commit statistics:
 

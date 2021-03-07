@@ -38,7 +38,7 @@ public class CMDManager {
         } catch (NullPointerException e) {
             result = "Command was not found. Try again.";
         }
-        return result;
+        return result.trim();
     }
     private Command getCommandByString(String command) {
         for (Command command1: commands) {
