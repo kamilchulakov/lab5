@@ -4,7 +4,7 @@ import interfaces.*;
 
 public class Main {
     public static void main(String[] args) {
-        AbstractUI ui = new GUI();
+        UI ui = new GUI();
         ui.run();
     }
 }
