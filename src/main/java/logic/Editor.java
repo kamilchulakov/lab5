@@ -43,4 +43,11 @@ public class Editor {
         // without ArrayList I got some error message: ConcurrentModificationException
         for (String key3: toDeleteKeys) collection.remove(key3);
     }
+
+    public String getAverageMinimalPoint() {
+        long result = 0;
+        if (collection.size() == 0) return String.valueOf(result);
+        for (LabWork labWork: collection.values()) result += labWork.getMinimalPoint();
+        return String.valueOf(result / collection.size());
+    }
 }
