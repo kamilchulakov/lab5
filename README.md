@@ -41,11 +41,12 @@ QA Testing:<br>
 
 **Fix**: 8 :sweat_drops:
 
-**Update**: 2 :yum:
+**Update**: 4 :yum:
 
 ## Task
 
-Реализовать консольное приложение, которое реализует управление коллекцией объектов в интерактивном режиме. В коллекции необходимо хранить объекты класса LabWork, описание которого приведено ниже.
+Реализовать консольное приложение, которое реализует управление коллекцией объектов в интерактивном режиме.\
+В коллекции необходимо хранить объекты класса LabWork, описание которого приведено ниже.
 
 Разработанная программа должна удовлетворять следующим требованиям:
 
@@ -91,25 +92,25 @@ QA Testing:<br>
 
 Описание хранимых в коллекции классов:
 
-public class LabWork {
-private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
-private String name; //Поле не может быть null, Строка не может быть пустой
-private Coordinates coordinates; //Поле не может быть null
-private java.time.LocalDate creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
-private Long minimalPoint; //Поле не может быть null, Значение поля должно быть больше 0
-private Difficulty difficulty; //Поле не может быть null
-private Discipline discipline; //Поле может быть null
-}
-public class Coordinates {
-private float x; //Максимальное значение поля: 71
-private Float y; //Максимальное значение поля: 556, Поле не может быть null
-}
-public class Discipline {
-private String name; //Поле не может быть null, Строка не может быть пустой
-private Long selfStudyHours; //Поле может быть null
-}
-public enum Difficulty {
-EASY,
-IMPOSSIBLE,
-TERRIBLE;
-}
+public class LabWork {\
+private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически\
+private String name; //Поле не может быть null, Строка не может быть пустой\
+private Coordinates coordinates; //Поле не может быть null\
+private java.time.LocalDate creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически\
+private Long minimalPoint; //Поле не может быть null, Значение поля должно быть больше 0\
+private Difficulty difficulty; //Поле не может быть null\
+private Discipline discipline; //Поле может быть null\
+}\
+public class Coordinates {\
+private float x; //Максимальное значение поля: 71\
+private Float y; //Максимальное значение поля: 556, Поле не может быть null\
+}\
+public class Discipline {\
+private String name; //Поле не может быть null, Строка не может быть пустой\
+private Long selfStudyHours; //Поле может быть null\
+}\
+public enum Difficulty {\
+EASY,\
+IMPOSSIBLE,\
+TERRIBLE;\
+}\
