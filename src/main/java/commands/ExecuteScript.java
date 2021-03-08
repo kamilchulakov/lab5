@@ -10,7 +10,7 @@ public class ExecuteScript implements Command{
 
     @Override
     public String getDescription() {
-        return "execute_script <filename>";
+        return "execute_script <filename> - a command which executes a script.";
     }
 
     @Override
