@@ -1,5 +1,7 @@
 package logic;
 
+import objects.Difficulty;
+import objects.DifficultyComparator;
 import objects.FabricLabWorks;
 import objects.LabWork;
 
@@ -49,5 +51,17 @@ public class Editor {
         if (collection.size() == 0) return String.valueOf(result);
         for (LabWork labWork: collection.values()) result += labWork.getMinimalPoint();
         return String.valueOf(result / collection.size());
+    }
+
+    public String getDescendingDifficulty() {
+        ArrayList<Difficulty> difficulties = new ArrayList<>();
+        for (LabWork labwork: collection.values()
+             ) {
+            difficulties.add(labwork.getDifficulty());
+        }
+        difficulties.sort(new DifficultyComparator());
+        StringBuilder result = new StringBuilder();
+        for (Difficulty difficulty: difficulties) result.append(difficulty.toString()).append(" ");
+        return result.toString();
     }
 }

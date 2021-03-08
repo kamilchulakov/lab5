@@ -8,7 +8,7 @@ public class FabricLabWorks {
         hashMap.put("1", new LabWork("proga", new Coordinates(1.0f, 2), 2L,
                 Difficulty.EASY, new Discipline("java", 10L)));
         hashMap.put("2", new LabWork("proga", new Coordinates(1.0f, 2), 10L,
-                Difficulty.EASY, new Discipline("java", 10L)));
+                Difficulty.IMPOSSIBLE, new Discipline("java", 10L)));
         return hashMap;
     }
 }

@@ -27,5 +27,6 @@ public class FabricForCommands {
         list.add(new RemoveLower());
         list.add(new ExecuteScript());
         list.add(new AverageMinimalPoint());
+        list.add(new PrintDescendingDifficulty());
     }
 }
