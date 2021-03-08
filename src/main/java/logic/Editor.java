@@ -1,9 +1,6 @@
 package logic;
 
-import objects.Difficulty;
-import objects.DifficultyComparator;
-import objects.FabricLabWorks;
-import objects.LabWork;
+import objects.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,5 +60,15 @@ public class Editor {
         StringBuilder result = new StringBuilder();
         for (Difficulty difficulty: difficulties) result.append(difficulty.toString()).append(" ");
         return result.toString();
+    }
+
+    public String removeByDiscipline(Discipline discipline) {
+        for (String key: collection.keySet()) {
+            if (collection.get(key).getDiscipline().equals(discipline)) {
+                collection.remove(key);
+                return "Successfully removed element.";
+            } else System.out.println(collection.get(key).getDiscipline());
+        }
+        return "No matches.";
     }
 }

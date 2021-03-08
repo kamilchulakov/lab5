@@ -93,6 +93,7 @@ public class LabWork implements Comparable<LabWork>{
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", minimalPoint=" + minimalPoint +
+                ", discipline=" + discipline + '\n' +
                 "}\n";
     }
 }

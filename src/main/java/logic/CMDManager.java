@@ -32,7 +32,9 @@ public class CMDManager {
         if (justCommand.equals("history")) return getHistory(7);
         String result;
         try {
-            if (needsArg(justCommand))
+            if (needsArgs(justCommand))
+                result = command.exec(editor, getCommandArgs(commandWithArgs.split(justCommand)[1]));
+            else if (needsArg(justCommand))
                 result = command.exec(editor, getCommandArg(commandWithArgs));
             else result = command.exec(editor, null);
         } catch (NullPointerException e) {
@@ -64,12 +66,19 @@ public class CMDManager {
         return line.toLowerCase().trim().split(" ")[1];
     }
 
+    private String getCommandArgs(String line) {
+        String[] all = line.split(" ");
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String val: all) stringBuilder.append(val).append(" ");
+        return stringBuilder.toString().trim();
+    }
+
     private boolean needsArg(String commandName) {
         return commandName.equals("remove_key") | commandName.equals("remove_lower");
     }
 
     public boolean needsArgs(String command) {
-        return false;
+        return command.equals("remove_any_by_discipline");
     }
 
     public boolean isExecuteScript(String input) {

@@ -6,7 +6,7 @@ public class GUI extends AbstractUI{
     JFrame frame;
     @Override
     protected String getArg(String arg) {
-        return getInput("Type an arg", "arg");
+        return getInput("Type an "+ arg, arg);
     }
 
     @Override
