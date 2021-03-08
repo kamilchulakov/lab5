@@ -26,5 +26,6 @@ public class FabricForCommands {
         list.add(new Clear());
         list.add(new RemoveLower());
         list.add(new ExecuteScript());
+        list.add(new AverageMinimalPoint());
     }
 }
