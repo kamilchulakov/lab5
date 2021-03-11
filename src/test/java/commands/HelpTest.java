@@ -3,6 +3,7 @@ package commands;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import henchmen.FabricForCommands;
 import logic.CMDManager;
 import logic.Editor;
 import org.junit.Test;

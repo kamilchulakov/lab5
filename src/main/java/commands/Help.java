@@ -1,9 +1,7 @@
 package commands;
 
+import henchmen.FabricForCommands;
 import logic.Editor;
-import objects.LabWork;
-
-import java.util.HashMap;
 
 public class Help implements Command{
     @Override

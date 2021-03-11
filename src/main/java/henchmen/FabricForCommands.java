@@ -1,4 +1,6 @@
-package commands;
+package henchmen;
+
+import commands.*;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

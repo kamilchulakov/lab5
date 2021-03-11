@@ -1,34 +1,25 @@
 package logic;
 
 import commands.Command;
-import commands.FabricForCommands;
-import objects.LabWork;
+import henchmen.FabricForCommands;
 
 import java.util.*;
 
 public class CMDManager {
-    private Queue<Command> commandsQueue = new LinkedList<>();
+    private CommandHistory commandHistory = new CommandHistory();
     private final ArrayList<Command> commands = new ArrayList<>();
     public CMDManager() {
         FabricForCommands fabricForCommands = new FabricForCommands();
         commands.addAll(fabricForCommands.getAllCommandsArrayList());
     }
     private String getHistory(int number) {
-        StringBuilder stringBuilder = new StringBuilder();
-        Iterator<Command> itr = commandsQueue.iterator();
-        int i = 0;
-        while (itr.hasNext() & i < number) {
-            stringBuilder.append(itr.next().getName()).append("\n");
-            System.out.print("");
-            i++;
-        }
-        return stringBuilder.toString();
+        return commandHistory.getPureHistory(number);
     }
     public String execute(Editor editor, String commandWithArgs) {
         //System.out.println(commandWithArgs);
         String justCommand = getPureCommandName(commandWithArgs);
         Command command = getCommandByString(justCommand);
-        commandsQueue.add(command);
+        commandHistory.add(commandWithArgs);
         if (justCommand.equals("history")) return getHistory(7);
         String result;
         try {
