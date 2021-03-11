@@ -21,7 +21,7 @@ public abstract class AbstractUI implements UI{
     }
 
     @Override
-    public void run() {
+    public final void run() {
         while (true) {
             String input = askForCommand();
             if (isValidCommand(input)) {
@@ -37,7 +37,7 @@ public abstract class AbstractUI implements UI{
         }
     }
 
-    protected String askForCommand() {
+    protected final String askForCommand() {
         String input = getCommand();
         if (isValidCommand(input)) {
             if (needsArgs(input)) {
@@ -51,7 +51,7 @@ public abstract class AbstractUI implements UI{
         }
     }
 
-    protected String askForArg(String arg) {
+    protected final String askForArg(String arg) {
         return getArg(arg);
     }
 
