@@ -77,20 +77,7 @@ public abstract class AbstractUI implements UI{
             Scanner myReader = new Scanner(file);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                if (isValidCommand(data)) {
-                    if (needsArgs(data)) {
-                        data += askForArg("arg");
-                    }
-                    if (isValidCommand(data)) {
-                        if (cmdManager.isExecuteScript(data)) {
-                            executeScript(data);
-                        }
-                        else {
-                            String result = cmdManager.execute(editor, data);
-                            display(result);
-                        }
-                    }
-                }
+                processCommandFromExecuteScriptLoop(data);
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -100,5 +87,21 @@ public abstract class AbstractUI implements UI{
 
     private boolean needsArgs(String command) {
         return cmdManager.needsArgs(command);
+    }
+    private void processCommandFromExecuteScriptLoop(String data) {
+        if (isValidCommand(data)) {
+            if (needsArgs(data)) {
+                data += askForArg("arg");
+            }
+            if (isValidCommand(data)) {
+                if (cmdManager.isExecuteScript(data)) {
+                    executeScript(data);
+                }
+                else {
+                    String result = cmdManager.execute(editor, data);
+                    display(result);
+                }
+            }
+        }
     }
 }
