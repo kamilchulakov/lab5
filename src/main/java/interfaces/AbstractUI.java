@@ -1,5 +1,6 @@
 package interfaces;
 
+import henchmen.Validator;
 import logic.CMDManager;
 import logic.Editor;
 
@@ -11,12 +12,14 @@ import java.util.Scanner;
 public abstract class AbstractUI implements UI{
     CMDManager cmdManager;
     Editor editor;
+    Validator validator;
     ArrayList<String> cachedFilenames;
 
     public AbstractUI() {
         cmdManager = new CMDManager();
         editor = new Editor();
         cachedFilenames = new ArrayList<>();
+        validator = new Validator();
         createUI();
     }
 
@@ -25,7 +28,7 @@ public abstract class AbstractUI implements UI{
         while (true) {
             String input = askForCommand();
             if (isValidCommand(input)) {
-                if (cmdManager.isExecuteScript(input)) {
+                if (validator.isExecuteScript(input)) {
                     cachedFilenames = new ArrayList<>();
                     executeScript(input);
                 }
@@ -60,7 +63,7 @@ public abstract class AbstractUI implements UI{
     protected abstract void createUI();
 
     private boolean isValidCommand(String command) {
-        return cmdManager.validate(command);
+        return validator.validate(command);
     }
 
     private void executeScript(String input) {
@@ -86,7 +89,7 @@ public abstract class AbstractUI implements UI{
     }
 
     private boolean needsArgs(String command) {
-        return cmdManager.needsArgs(command);
+        return validator.needsArgs(command);
     }
     private void processCommandFromExecuteScriptLoop(String data) {
         if (isValidCommand(data)) {
@@ -94,7 +97,7 @@ public abstract class AbstractUI implements UI{
                 data += askForArg("arg");
             }
             if (isValidCommand(data)) {
-                if (cmdManager.isExecuteScript(data)) {
+                if (validator.isExecuteScript(data)) {
                     executeScript(data);
                 }
                 else {

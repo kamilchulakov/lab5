@@ -42,13 +42,6 @@ public class CMDManager {
         return null;
     }
 
-    public boolean validate(String command) {
-        if (command == null) System.exit(0);
-        String commandName = command.toLowerCase().trim().split(" ")[0];
-        Command command1 = getCommandByString(commandName);
-        return command1 != null;
-    }
-
     private String getPureCommandName(String line) {
         return line.toLowerCase().trim().split(" ")[0];
     }
@@ -68,11 +61,7 @@ public class CMDManager {
         return commandName.equals("remove_key") | commandName.equals("remove_lower");
     }
 
-    public boolean needsArgs(String command) {
+    private boolean needsArgs(String command) {
         return command.equals("remove_any_by_discipline");
-    }
-
-    public boolean isExecuteScript(String input) {
-        return input.split(" ")[0].equals("execute_script");
     }
 }
