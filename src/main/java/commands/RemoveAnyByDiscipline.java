@@ -17,8 +17,14 @@ public class RemoveAnyByDiscipline implements Command{
     @Override
     public String exec(Editor editor, String args) {
         String name = args.split(" ")[0];
-        Long hours = Long.valueOf(args.split(" ")[1]);
-        Discipline discipline = new Discipline(name, hours);
-        return editor.removeByDiscipline(discipline);
+        String result;
+        try {
+            Long hours = Long.valueOf(args.split(" ")[1]);
+            Discipline discipline = new Discipline(name, hours);
+            result = editor.removeByDiscipline(discipline);
+        } catch (NumberFormatException numberFormatException) {
+            result = "Invalid number. Try again.";
+        }
+        return result;
     }
 }

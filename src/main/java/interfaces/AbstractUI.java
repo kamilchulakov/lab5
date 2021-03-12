@@ -44,8 +44,8 @@ public abstract class AbstractUI implements UI{
         String input = getCommand();
         if (isValidCommand(input)) {
             if (needsArgs(input)) {
-                input += " " + askForArg("name");
-                input += " " + askForArg("hours");
+                ArrayList<String> args = validator.getArgsForStringCommand(input);
+                for (String arg: args) input += " " + askForArg(arg);
             }
             return input;
         } else {

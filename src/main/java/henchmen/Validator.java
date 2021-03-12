@@ -33,4 +33,13 @@ public class Validator {
     public boolean isExecuteScript(String input) {
         return input.split(" ")[0].equals("execute_script");
     }
+
+    public ArrayList<String> getArgsForStringCommand(String command) {
+        ArrayList<String> arrayList = new ArrayList<>();
+        if (command.equals("remove_any_by_discipline")) {
+            arrayList.add("discipline name");
+            arrayList.add("discipline hours");
+        }
+        return arrayList;
+    }
 }
