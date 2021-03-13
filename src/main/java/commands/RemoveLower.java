@@ -1,6 +1,7 @@
 package commands;
 
 import logic.Editor;
+import objects.LabWork;
 
 public class RemoveLower implements Command{
     @Override
@@ -15,8 +16,12 @@ public class RemoveLower implements Command{
 
     @Override
     public String exec(Editor editor, String args) {
-        if (!editor.getCollection().containsKey(args)) return "Key was not found!";
-        editor.removeAllLowerThanByKey(args);
+        try {
+            editor.removeAllLowerByLabwork(editor.getElementFromString(args));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Some problems with input data.";
+        }
         return "Removed.";
     }
 }

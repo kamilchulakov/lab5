@@ -27,7 +27,8 @@ public class Validator {
         return null;
     }
     public boolean needsArgs(String command) {
-        return command.equals("remove_any_by_discipline");
+        return command.equals("remove_any_by_discipline") | command.equals("insert") | command.equals("update") |
+                command.equals("remove_lower") | command.equals("replace_if_lower");
     }
 
     public boolean isExecuteScript(String input) {
@@ -37,8 +38,17 @@ public class Validator {
     public ArrayList<String> getArgsForStringCommand(String command) {
         ArrayList<String> arrayList = new ArrayList<>();
         if (command.equals("remove_any_by_discipline")) {
-            arrayList.add("discipline name");
-            arrayList.add("discipline hours");
+            arrayList.add("discipline_name");
+            arrayList.add("discipline_hours");
+        } else if (command.equals("insert") | command.equals("update") |
+        command.equals("remove_lower") | command.equals("replace_if_lower")) {
+            arrayList.add("labwork_name");
+            arrayList.add("coordinate_x");
+            arrayList.add("coordinate_y");
+            arrayList.add("minimal_point");
+            arrayList.add("difficulty_level");
+            arrayList.add("discipline_name");
+            arrayList.add("discipline_hours");
         }
         return arrayList;
     }

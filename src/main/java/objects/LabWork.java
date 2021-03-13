@@ -84,7 +84,7 @@ public class LabWork implements Comparable<LabWork>{
 
     @Override
     public int compareTo(LabWork o) {
-        return 0;
+        return getId() - o.getId();
     }
 
     @Override

@@ -62,6 +62,7 @@ public class CMDManager {
     }
 
     private boolean needsArgs(String command) {
-        return command.equals("remove_any_by_discipline");
+        return command.equals("remove_any_by_discipline") | command.equals("insert") | command.equals("update") |
+                command.equals("remove_lower") | command.equals("replace_if_lower");
     }
 }

@@ -3,6 +3,7 @@ package logic;
 import objects.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Editor {
@@ -44,6 +45,21 @@ public class Editor {
         }
         // without ArrayList I got some error message: ConcurrentModificationException
         for (String key3: toDeleteKeys) collection.remove(key3);
+    }
+
+    public void removeAllLowerByLabwork(LabWork labWork) {
+        ArrayList<String> toDeleteKeys = new ArrayList<>();
+        for (String key: collection.keySet()) {
+            if (collection.get(key).compareTo(labWork) < 0) toDeleteKeys.add(key);
+        }
+        for (String key3: toDeleteKeys) collection.remove(key3);
+    }
+
+    public LabWork getElementFromString(String labwork) throws NoDifficultyFoundException {
+        String[] vars = labwork.split(" ");
+        return new LabWork(vars[0], new Coordinates(Integer.parseInt(vars[1]),
+                Integer.parseInt(vars[2])), Long.valueOf(vars[3]),
+                Difficulty.get(vars[4]), new Discipline(vars[5], Long.valueOf(vars[6])));
     }
 
     public String getAverageMinimalPoint() {
