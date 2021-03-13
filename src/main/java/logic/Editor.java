@@ -70,7 +70,7 @@ public class Editor {
             if (collection.get(key).getDiscipline().equals(discipline)) {
                 collection.remove(key);
                 return "Successfully removed element.";
-            } else System.out.println(collection.get(key).getDiscipline());
+            } // else System.out.println(collection.get(key).getDiscipline());
         }
         return "No matches.";
     }

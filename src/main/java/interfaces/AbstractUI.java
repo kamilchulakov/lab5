@@ -28,7 +28,7 @@ public abstract class AbstractUI implements UI{
         while (true) {
             String input = askForCommand();
             if (isValidCommand(input)) {
-                if (validator.isExecuteScript(input)) {
+                if (isExecuteScript(input)) {
                     cachedFilenames = new ArrayList<>();
                     executeScript(input);
                 }
@@ -43,10 +43,7 @@ public abstract class AbstractUI implements UI{
     protected final String askForCommand() {
         String input = getCommand();
         if (isValidCommand(input)) {
-            if (needsArgs(input)) {
-                ArrayList<String> args = validator.getArgsForStringCommand(input);
-                for (String arg: args) input += " " + askForArg(arg);
-            }
+            input = ifNeedsArgsGetArgs(input);
             return input;
         } else {
             display("Try again");
@@ -67,14 +64,18 @@ public abstract class AbstractUI implements UI{
     }
 
     private void executeScript(String input) {
-        String filename = input.split(" ")[1];
-        if (!cachedFilenames.contains(filename)) {
-            cachedFilenames.add(filename);
-            execute_script_loop(filename);
-        } else display("Prevented StackOverflow! Filename: " + filename);
+        try {
+            String filename = input.split(" ")[1];
+            if (!cachedFilenames.contains(filename)) {
+                cachedFilenames.add(filename);
+                executeScriptLoop(filename);
+            } else display("Prevented StackOverflow! Filename: " + filename);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            display("Invalid filename. Try again!");
+        }
     }
 
-    private void execute_script_loop(String filename) {
+    private void executeScriptLoop(String filename) {
         try {
             File file = new File(filename);
             Scanner myReader = new Scanner(file);
@@ -91,19 +92,25 @@ public abstract class AbstractUI implements UI{
     private boolean needsArgs(String command) {
         return validator.needsArgs(command);
     }
+    private boolean isExecuteScript(String input) {
+        return validator.isExecuteScript(input);
+    }
+    private String ifNeedsArgsGetArgs(String input) {
+        if (needsArgs(input)) {
+            ArrayList<String> args = validator.getArgsForStringCommand(input);
+            for (String arg: args) input += " " + askForArg(arg);
+        }
+        return input;
+    }
     private void processCommandFromExecuteScriptLoop(String data) {
         if (isValidCommand(data)) {
-            if (needsArgs(data)) {
-                data += askForArg("arg");
+            if (isExecuteScript(data)) {
+                executeScript(data);
             }
-            if (isValidCommand(data)) {
-                if (validator.isExecuteScript(data)) {
-                    executeScript(data);
-                }
-                else {
-                    String result = cmdManager.execute(editor, data);
-                    display(result);
-                }
+            else {
+                data = ifNeedsArgsGetArgs(data);
+                String result = cmdManager.execute(editor, data);
+                display(result);
             }
         }
     }
