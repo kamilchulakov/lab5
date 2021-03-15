@@ -1,7 +1,12 @@
 package logic;
 
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import objects.*;
 
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -97,6 +102,12 @@ public class Editor {
 
     public void insert(String key, LabWork labwork) {
         collection.put(key, labwork);
+    }
+
+    public void save(String filename) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+        writer.writeValue(Paths.get("collection.json").toFile(), collection);
     }
 
     public void removeIfLower(String key, LabWork labWork) {

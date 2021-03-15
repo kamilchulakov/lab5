@@ -38,6 +38,7 @@ public class FabricForCommands {
         list.add(new InsertKey());
         list.add(new Update());
         list.add(new ReplaceIfLower());
+        list.add(new Save());
     }
 
     private void addCommandToTypedLists() {

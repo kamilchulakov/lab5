@@ -10,6 +10,14 @@ public class Discipline {
         selfStudyHours = number;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Long getSelfStudyHours() {
+        return selfStudyHours;
+    }
+
     @Override
     public String toString() {
         return "Discipline{" +
