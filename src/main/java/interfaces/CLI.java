@@ -7,7 +7,7 @@ public class CLI extends AbstractUI{
 
     @Override
     protected String getArg(String arg) {
-        System.out.print("Type an arg: ");
+        System.out.printf("Type an %s: ", arg);
         return getInput();
     }
 
@@ -24,7 +24,7 @@ public class CLI extends AbstractUI{
 
     @Override
     public void display(String status, String message) {
-        System.out.printf("Status: %s\nMessage:%s", status, message);
+        System.out.printf("Status: %s\nMessage:%s\n", status, message);
     }
 
     private String getInput() {
