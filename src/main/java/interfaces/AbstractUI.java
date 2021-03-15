@@ -1,6 +1,7 @@
 package interfaces;
 
 import henchmen.Validator;
+import input_exceptions.MoreThanException;
 import logic.CMDManager;
 import logic.Editor;
 import logic.InputData;
@@ -78,8 +79,10 @@ public abstract class AbstractUI implements UI{
                 try {
                     inputData.setCoordinateX(Integer.parseInt(askForArg("coordinateX")));
                     break;
+                } catch (MoreThanException e) {
+                    display("Error","Invalid coordinateX! Can't be more than " + e.getNumber());
                 } catch (Exception e) {
-                    display("Error","Invalid coordinateX! Can't be more than 71.");
+                    display("Error","Invalid coordinateX!");
                 }
             }
         }
@@ -88,8 +91,12 @@ public abstract class AbstractUI implements UI{
                 try {
                     inputData.setCoordinateY(Integer.parseInt(askForArg("coordinateY")));
                     break;
+                } catch (MoreThanException e) {
+                    display("Error", "Invalid coordinateY! Can't be more than " + e.getNumber());
+                } catch (NumberFormatException e) {
+                    display("Error", "Invalid coordinateY! Check number format.");
                 } catch (Exception e) {
-                    display("Error","Invalid coordinateY! Can't be more than 556.");
+                    display("Error","Invalid coordinateY!");
                 }
             }
         }
