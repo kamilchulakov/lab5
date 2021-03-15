@@ -90,4 +90,8 @@ public class Editor {
         }
         return "No matches.";
     }
+
+    public void insert(String key, LabWork labwork) {
+        collection.put(key, labwork);
+    }
 }

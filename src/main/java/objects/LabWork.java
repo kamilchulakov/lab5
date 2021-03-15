@@ -22,7 +22,8 @@ public class LabWork implements Comparable<LabWork>{
         minimalPoint = minimalPoint2;
         difficulty = difficulty2;
         discipline = discipline2;
-        id = (int) (name2.length() + minimalPoint);
+        if (name2 != null) id = (int) (name2.length() + minimalPoint);
+        else id = Math.toIntExact(minimalPoint);
         creationDate = LocalDate.now();
     }
 

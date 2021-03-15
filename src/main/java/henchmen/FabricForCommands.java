@@ -35,6 +35,7 @@ public class FabricForCommands {
         list.add(new AverageMinimalPoint());
         list.add(new PrintDescendingDifficulty());
         list.add(new RemoveAnyByDiscipline());
+        list.add(new InsertKey());
     }
 
     private void addCommandToTypedLists() {
