@@ -106,7 +106,7 @@ public abstract class AbstractUI implements UI{
         if (flags[5]) {
             while (true) {
                 try {
-                    inputData.setDifficulty(askForArg("difficulty"));
+                    inputData.setDifficulty(askForArg("difficulty: EASY, IMPOSSIBLE or TERRIBLE"));
                     break;
                 } catch (Exception e) {
                     display("Error","Invalid difficulty! Must be easy, impossible or terrible.");
