@@ -29,6 +29,8 @@ public class GUI extends AbstractUI{
                 message, status, JOptionPane.INFORMATION_MESSAGE);
         else if (status.equals("Failure")) JOptionPane.showMessageDialog(frame,
                 message, status, JOptionPane.WARNING_MESSAGE);
+        else if (status.equals("Undefined")) JOptionPane.showMessageDialog(frame,
+                message, status, JOptionPane.QUESTION_MESSAGE);
         else JOptionPane.showMessageDialog(frame,
                     message, status, JOptionPane.PLAIN_MESSAGE);
     }

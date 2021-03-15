@@ -38,16 +38,6 @@ public class Editor {
         collection.clear();
     }
 
-    public void removeAllLowerThanByKey(String key) {
-        Long minimalPoint = collection.get(key).getMinimalPoint();
-        ArrayList<String> toDeleteKeys = new ArrayList<>();
-        for (String key2: collection.keySet()) {
-            if (collection.get(key2).getMinimalPoint() < minimalPoint) toDeleteKeys.add(key2);
-        }
-        // without ArrayList I got some error message: ConcurrentModificationException
-        for (String key3: toDeleteKeys) collection.remove(key3);
-    }
-
     public void removeAllLowerByLabwork(LabWork labWork) {
         ArrayList<String> toDeleteKeys = new ArrayList<>();
         for (String key: collection.keySet()) {
@@ -107,5 +97,9 @@ public class Editor {
 
     public void insert(String key, LabWork labwork) {
         collection.put(key, labwork);
+    }
+
+    public void removeIfLower(String key, LabWork labWork) {
+        if (collection.get(key).compareTo(labWork) < 0) collection.remove(key);
     }
 }
