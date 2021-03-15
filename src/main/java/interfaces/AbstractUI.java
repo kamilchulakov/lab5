@@ -38,7 +38,7 @@ public abstract class AbstractUI implements UI{
                     String pureCommand = input.split(" ")[0];
                     InputData inputData = getInputData(input, pureCommand);
                     OutputData result = cmdManager.execute(editor, pureCommand, inputData);
-                    display(result.getResultMessage());
+                    display(result.getStatusMessage(), result.getResultMessage());
                 }
             }
         }
@@ -49,7 +49,7 @@ public abstract class AbstractUI implements UI{
         if (isValidCommand(input)) {
             return input;
         } else {
-            display("Try again.");
+            display("Error","Try again.");
             return "";
         }
     }
@@ -69,7 +69,7 @@ public abstract class AbstractUI implements UI{
                     inputData.setLabName(askForArg("labwork name"));
                     break;
                 } catch (Exception e) {
-                    display("Invalid labwork name! Can't be null.");
+                    display("Error","Invalid labwork name! Can't be null.");
                 }
             }
         }
@@ -79,7 +79,7 @@ public abstract class AbstractUI implements UI{
                     inputData.setCoordinateX(Integer.parseInt(askForArg("coordinateX")));
                     break;
                 } catch (Exception e) {
-                    display("Invalid coordinateX! Can't be more than 71.");
+                    display("Error","Invalid coordinateX! Can't be more than 71.");
                 }
             }
         }
@@ -89,7 +89,7 @@ public abstract class AbstractUI implements UI{
                     inputData.setCoordinateY(Integer.parseInt(askForArg("coordinateY")));
                     break;
                 } catch (Exception e) {
-                    display("Invalid coordinateY! Can't be more than 556.");
+                    display("Error","Invalid coordinateY! Can't be more than 556.");
                 }
             }
         }
@@ -99,7 +99,7 @@ public abstract class AbstractUI implements UI{
                     inputData.setMinimalPoint(Long.parseLong(askForArg("minimal point")));
                     break;
                 } catch (Exception e) {
-                    display("Invalid minimal point! Can't be more less than 1.");
+                    display("Error","Invalid minimal point! Can't be more less than 1.");
                 }
             }
         }
@@ -109,7 +109,7 @@ public abstract class AbstractUI implements UI{
                     inputData.setDifficulty(askForArg("difficulty"));
                     break;
                 } catch (Exception e) {
-                    display("Invalid difficulty! Must be easy, impossible or terrible.");
+                    display("Error","Invalid difficulty! Must be easy, impossible or terrible.");
                 }
             }
         }
@@ -119,7 +119,7 @@ public abstract class AbstractUI implements UI{
                     inputData.setDisciplineName(askForArg("discipline name"));
                     break;
                 } catch (Exception e) {
-                    display("Invalid discipline name! Can't be null.");
+                    display("Error","Invalid discipline name! Can't be null.");
                 }
             }
         }
@@ -129,7 +129,7 @@ public abstract class AbstractUI implements UI{
                     inputData.setSelfStudyHours(Long.parseLong(askForArg("study hours")));
                     break;
                 } catch (Exception e) {
-                    display("Invalid study hours. Can't be null.");
+                    display("Error","Invalid study hours. Can't be null.");
                 }
             }
         }
@@ -154,9 +154,9 @@ public abstract class AbstractUI implements UI{
             if (!cachedFilenames.contains(filename)) {
                 cachedFilenames.add(filename);
                 executeScriptLoop(filename);
-            } else display("Prevented StackOverflow! Filename: " + filename);
+            } else display("Error","Prevented StackOverflow! Filename: " + filename);
         } catch (ArrayIndexOutOfBoundsException e) {
-            display("Invalid filename. Try again!");
+            display("Error", "Invalid filename. Try again!");
         }
     }
 
@@ -170,7 +170,7 @@ public abstract class AbstractUI implements UI{
             }
             myReader.close();
         } catch (FileNotFoundException e) {
-            display("Try again! Bad filename: " + filename + ".");
+            display("Error", "Try again! Bad filename: " + filename + ".");
         }
     }
 
@@ -186,7 +186,7 @@ public abstract class AbstractUI implements UI{
                 String pureCommand = input.split(" ")[0];
                 InputData inputData = getInputData(input, pureCommand);
                 OutputData result = cmdManager.execute(editor, pureCommand, inputData);
-                display(result.getResultMessage());
+                display(result.getStatusMessage(), result.getResultMessage());
             }
         }
     }

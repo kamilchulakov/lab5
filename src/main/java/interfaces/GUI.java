@@ -22,8 +22,15 @@ public class GUI extends AbstractUI{
     }
 
     @Override
-    public void display(String message) {
-        JOptionPane.showMessageDialog(frame, message);
+    public void display(String status, String message) {
+        if (status.equals("Error")) JOptionPane.showMessageDialog(frame,
+                message, status, JOptionPane.ERROR_MESSAGE);
+        else if (status.equals("Success")) JOptionPane.showMessageDialog(frame,
+                message, status, JOptionPane.INFORMATION_MESSAGE);
+        else if (status.equals("Failure")) JOptionPane.showMessageDialog(frame,
+                message, status, JOptionPane.WARNING_MESSAGE);
+        else JOptionPane.showMessageDialog(frame,
+                    message, status, JOptionPane.PLAIN_MESSAGE);
     }
 
     private String getInput(String heading, String basicValue) {

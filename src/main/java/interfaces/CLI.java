@@ -23,8 +23,8 @@ public class CLI extends AbstractUI{
     }
 
     @Override
-    public void display(String message) {
-        System.out.println(message);
+    public void display(String status, String message) {
+        System.out.printf("Status: %s\nMessage:%s", status, message);
     }
 
     private String getInput() {
