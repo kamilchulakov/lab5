@@ -5,6 +5,7 @@ import logic.InputData;
 import logic.OutputData;
 import objects.Coordinates;
 import objects.Discipline;
+import objects.FabricLabWorks;
 import objects.LabWork;
 
 public class RemoveLower extends AbstractElementCommand{
@@ -21,12 +22,8 @@ public class RemoveLower extends AbstractElementCommand{
     @Override
     public OutputData exec(Editor editor, InputData inputData) {
         try {
-            String name = inputData.getDisciplineName();
-            Long hours = inputData.getSelfStudyHours();
-            Discipline discipline = new Discipline(name, hours);
-            Coordinates coordinates = new Coordinates(inputData.getCoordinateX(), inputData.getCoordinateY());
-            LabWork labwork = new LabWork(inputData.getLabName(), coordinates, inputData.getMinimalPoint(),
-                    inputData.getDifficulty(),discipline);
+            FabricLabWorks fabricLabWorks = new FabricLabWorks();
+            LabWork labwork = fabricLabWorks.makeLabworkFromInputData(inputData);
             editor.removeAllLowerByLabwork(labwork);
         } catch (Exception e) {
             e.printStackTrace();

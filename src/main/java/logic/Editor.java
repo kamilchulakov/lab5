@@ -5,6 +5,7 @@ import objects.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 
 public class Editor {
     HashMap<String, LabWork> collection;
@@ -89,6 +90,19 @@ public class Editor {
             } // else System.out.println(collection.get(key).getDiscipline());
         }
         return "No matches.";
+    }
+
+    public void update(int id, LabWork labWork) {
+        boolean notFound = true;
+        for (String key: collection.keySet()) {
+            LabWork labWork1 = collection.get(key);
+            if (labWork1.getId() == id) {
+                labWork1.copyFromLabwork(labWork);
+                notFound = false;
+            }
+        }
+        if (notFound) throw new NoSuchElementException();
+
     }
 
     public void insert(String key, LabWork labwork) {

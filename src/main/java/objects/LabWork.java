@@ -31,10 +31,6 @@ public class LabWork implements Comparable<LabWork>{
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
@@ -81,6 +77,14 @@ public class LabWork implements Comparable<LabWork>{
 
     public void setDiscipline(Discipline discipline) {
         this.discipline = discipline;
+    }
+
+    public void copyFromLabwork(LabWork labWork1) {
+        setName(labWork1.getName());
+        setCoordinates(labWork1.getCoordinates());
+        setDifficulty(labWork1.getDifficulty());
+        setDiscipline(labWork1.getDiscipline());
+        setMinimalPoint(labWork1.getMinimalPoint());
     }
 
     @Override

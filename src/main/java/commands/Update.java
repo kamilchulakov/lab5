@@ -3,20 +3,20 @@ package commands;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
-import objects.Coordinates;
-import objects.Discipline;
 import objects.FabricLabWorks;
 import objects.LabWork;
 
-public class InsertKey extends AbstractOneArgElement{
+import java.util.NoSuchElementException;
+
+public class Update extends AbstractOneArgElement{
     @Override
     public String getName() {
-        return "insert";
+        return "update";
     }
 
     @Override
     public String getDescription() {
-        return "insert <key> - a command which asks to give element info and inserts it by key.";
+        return "update <id> - a command which updates element values by id.";
     }
 
     @Override
@@ -24,11 +24,12 @@ public class InsertKey extends AbstractOneArgElement{
         try {
             FabricLabWorks fabricLabWorks = new FabricLabWorks();
             LabWork labwork = fabricLabWorks.makeLabworkFromInputData(inputData);
-            editor.insert(inputData.getCommandArg(), labwork);
+            editor.update(Integer.parseInt(inputData.getCommandArg()), labwork);
+        } catch (NoSuchElementException e) {
+            return new OutputData("Error", "Invalid id: no such element");
         } catch (Exception e) {
             e.printStackTrace();
-            return new OutputData("Failure", "Some problems with input data.");
-        }
-        return new OutputData("Success", "Inserted.");
+            return new OutputData("Error", "Something went wrong.");
+        } return new OutputData("Success", "Updated.");
     }
 }
