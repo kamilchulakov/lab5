@@ -5,11 +5,11 @@ public enum Difficulty {
     IMPOSSIBLE,
     TERRIBLE;
 
-    public static Difficulty get(String var) throws NoDifficultyFoundException {
-        var = var.toLowerCase();
-        if (var.equals("easy")) return EASY;
-        else if (var.equals("impossible")) return IMPOSSIBLE;
-        else if (var.equals("terrible")) return TERRIBLE;
+    public static Difficulty get(String variable) throws NoDifficultyFoundException {
+        String var1 = variable.toLowerCase();
+        if (var1.equals("easy") | variable.equals("easy")) return EASY;
+        else if (var1.equals("impossible") | variable.equals("impossible")) return IMPOSSIBLE;
+        else if (var1.equals("terrible") | variable.equals("terrible")) return TERRIBLE;
         else throw new NoDifficultyFoundException();
     }
 }

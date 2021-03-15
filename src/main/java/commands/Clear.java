@@ -2,6 +2,7 @@ package commands;
 
 import logic.Editor;
 import logic.InputData;
+import logic.OutputData;
 
 public class Clear extends AbstractNoInputCommand{
     @Override
@@ -15,8 +16,8 @@ public class Clear extends AbstractNoInputCommand{
     }
 
     @Override
-    public String exec(Editor editor, InputData inputData) {
+    public OutputData exec(Editor editor, InputData inputData) {
         editor.clear();
-        return "Successfully cleared the collection.";
+        return new OutputData("Success", "Successfully cleared the collection.");
     }
 }

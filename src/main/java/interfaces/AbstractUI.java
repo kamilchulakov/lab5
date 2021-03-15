@@ -4,6 +4,7 @@ import henchmen.Validator;
 import logic.CMDManager;
 import logic.Editor;
 import logic.InputData;
+import logic.OutputData;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -36,8 +37,8 @@ public abstract class AbstractUI implements UI{
                 else {
                     String pureCommand = input.split(" ")[0];
                     InputData inputData = getInputData(input, pureCommand);
-                    String result = cmdManager.execute(editor, pureCommand, inputData);
-                    display(result);
+                    OutputData result = cmdManager.execute(editor, pureCommand, inputData);
+                    display(result.getResultMessage());
                 }
             }
         }
@@ -184,8 +185,8 @@ public abstract class AbstractUI implements UI{
             else {
                 String pureCommand = input.split(" ")[0];
                 InputData inputData = getInputData(input, pureCommand);
-                String result = cmdManager.execute(editor, pureCommand, inputData);
-                display(result);
+                OutputData result = cmdManager.execute(editor, pureCommand, inputData);
+                display(result.getResultMessage());
             }
         }
     }

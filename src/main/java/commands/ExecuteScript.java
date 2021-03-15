@@ -2,6 +2,7 @@ package commands;
 
 import logic.Editor;
 import logic.InputData;
+import logic.OutputData;
 
 public class ExecuteScript extends AbstractOneArgCommand{
     @Override
@@ -15,7 +16,7 @@ public class ExecuteScript extends AbstractOneArgCommand{
     }
 
     @Override
-    public String exec(Editor editor, InputData inputData) {
-        return "";
+    public OutputData exec(Editor editor, InputData inputData) {
+        return new OutputData("Error", "It should not be here.");
     }
 }

@@ -2,6 +2,7 @@ package commands;
 
 import logic.Editor;
 import logic.InputData;
+import logic.OutputData;
 import objects.Discipline;
 
 public class RemoveAnyByDiscipline extends AbstractDisciplineCommand{
@@ -16,15 +17,15 @@ public class RemoveAnyByDiscipline extends AbstractDisciplineCommand{
     }
 
     @Override
-    public String exec(Editor editor, InputData inputData) {
-        String result;
+    public OutputData exec(Editor editor, InputData inputData) {
+        OutputData result;
         try {
             String name = inputData.getDisciplineName();
             Long hours = inputData.getSelfStudyHours();
             Discipline discipline = new Discipline(name, hours);
-            result = editor.removeByDiscipline(discipline);
+            result = new OutputData("Success", editor.removeByDiscipline(discipline));
         } catch (NumberFormatException numberFormatException) {
-            result = "Invalid number. Try again.";
+            result = new OutputData("Failure", "Invalid number. Try again.");
         }
         return result;
     }

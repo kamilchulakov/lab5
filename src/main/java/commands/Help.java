@@ -3,6 +3,7 @@ package commands;
 import henchmen.FabricForCommands;
 import logic.Editor;
 import logic.InputData;
+import logic.OutputData;
 
 public class Help extends AbstractNoInputCommand{
     @Override
@@ -17,11 +18,11 @@ public class Help extends AbstractNoInputCommand{
     }
 
     @Override
-    public String exec(Editor editor, InputData inputData) {
+    public OutputData exec(Editor editor, InputData inputData) {
         FabricForCommands fabric = new FabricForCommands();
         StringBuilder stringBuilder = new StringBuilder();
         for (Command command: fabric.getAllCommandsArrayList())
             stringBuilder.append(command.getDescription()).append("\n");
-        return stringBuilder.toString();
+        return new OutputData("Success", stringBuilder.toString());
     }
 }

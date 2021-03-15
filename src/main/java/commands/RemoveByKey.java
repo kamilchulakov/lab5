@@ -2,6 +2,7 @@ package commands;
 
 import logic.Editor;
 import logic.InputData;
+import logic.OutputData;
 import objects.LabWork;
 
 import java.util.HashMap;
@@ -19,9 +20,10 @@ public class RemoveByKey extends AbstractOneArgCommand{
     }
 
     @Override
-    public String exec(Editor editor, InputData inputData) {
-        if (!editor.getCollection().containsKey(inputData.getCommandArg())) return "Key was not found!";
+    public OutputData exec(Editor editor, InputData inputData) {
+        if (!editor.getCollection().containsKey(inputData.getCommandArg()))
+            return new OutputData("Failure", "Key was not found!");
         editor.removeElementByKey(inputData.getCommandArg());
-        return "Successfully removed the element.";
+        return new OutputData("Success", "Successfully removed the element.");
     }
 }

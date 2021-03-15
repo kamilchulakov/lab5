@@ -2,6 +2,7 @@ package commands;
 
 import logic.Editor;
 import logic.InputData;
+import logic.OutputData;
 import objects.Coordinates;
 import objects.Discipline;
 import objects.LabWork;
@@ -18,7 +19,7 @@ public class RemoveLower extends AbstractElementCommand{
     }
 
     @Override
-    public String exec(Editor editor, InputData inputData) {
+    public OutputData exec(Editor editor, InputData inputData) {
         try {
             String name = inputData.getDisciplineName();
             Long hours = inputData.getSelfStudyHours();
@@ -29,8 +30,8 @@ public class RemoveLower extends AbstractElementCommand{
             editor.removeAllLowerByLabwork(labwork);
         } catch (Exception e) {
             e.printStackTrace();
-            return "Some problems with input data.";
+            return new OutputData("Failure", "Some problems with input data.");
         }
-        return "Removed.";
+        return new OutputData("Success", "Removed.");
     }
 }

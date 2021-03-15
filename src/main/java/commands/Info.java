@@ -2,6 +2,7 @@ package commands;
 
 import logic.Editor;
 import logic.InputData;
+import logic.OutputData;
 
 import java.util.Calendar;
 
@@ -22,8 +23,9 @@ public class Info extends AbstractNoInputCommand{
     }
 
     @Override
-    public String exec(Editor editor, InputData inputData) {
-            return String.format("Collection info:\nType: %s\nDate: %s\nSize: %s",
-                editor.getCollection().getClass().getName(), calendar.getTime().toString(), editor.getCollection().size());
+    public OutputData exec(Editor editor, InputData inputData) {
+            return new OutputData("Success",
+                    String.format("Collection info:\nType: %s\nDate: %s\nSize: %s",
+                editor.getCollection().getClass().getName(), calendar.getTime().toString(), editor.getCollection().size()));
     }
 }
