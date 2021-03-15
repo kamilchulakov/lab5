@@ -24,7 +24,7 @@ public class CLI extends AbstractUI{
 
     @Override
     public void display(String status, String message) {
-        System.out.printf("Status: %s\nMessage:%s\n", status, message);
+        System.out.printf("-------------\nStatus: %s\nMessage: %s\n------------\n", status, message);
     }
 
     private String getInput() {

@@ -7,8 +7,8 @@ import objects.Difficulty;
 public class InputData {
     private String commandArg; //Поле может быть null Строка не может быть пустой
     private String labName; //Поле не может быть null Строка не может быть пустой
-    private int coordinateX; //Максимальное значение поля: 71 Поле может быть null
-    private int coordinateY; //Максимальное значение поля: 556, Поле не может быть null
+    private float coordinateX; //Максимальное значение поля: 71 Поле может быть null
+    private float coordinateY; //Максимальное значение поля: 556, Поле не может быть null
     private Long minimalPoint; //Поле не может быть null, Значение поля должно быть больше 0
     private Difficulty difficulty; //Поле не может быть null
     private String disciplineName; //Поле не может быть null Строка не может быть пустой
@@ -30,20 +30,20 @@ public class InputData {
         this.labName = labName;
     }
 
-    public int getCoordinateX() {
+    public float getCoordinateX() {
         return coordinateX;
     }
 
-    public void setCoordinateX(int coordinateX) throws MoreThanException {
+    public void setCoordinateX(float coordinateX) throws MoreThanException {
         if (coordinateX > 71) throw new MoreThanException(71);
         this.coordinateX = coordinateX;
     }
 
-    public int getCoordinateY() {
+    public float getCoordinateY() {
         return coordinateY;
     }
 
-    public void setCoordinateY(int coordinateY) throws MoreThanException {
+    public void setCoordinateY(float coordinateY) throws MoreThanException {
         if (coordinateX > 556) throw new MoreThanException(556);
         this.coordinateY = coordinateY;
     }

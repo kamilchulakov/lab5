@@ -20,7 +20,13 @@ public class Editor {
         collection = fabricLabWorks.getTestingMaterial();
     }
     public Editor(String filename) {
-        this();
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            collection = mapper.readValue(Paths.get(filename).toFile(), HashMap.class);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public HashMap<String, LabWork> getCollection() {
@@ -51,13 +57,6 @@ public class Editor {
         for (String key3: toDeleteKeys) collection.remove(key3);
     }
 
-    public LabWork getElementFromString(String labwork) throws NoDifficultyFoundException {
-        String[] vars = labwork.split(" ");
-        return new LabWork(vars[0], new Coordinates(Integer.parseInt(vars[1]),
-                Integer.parseInt(vars[2])), Long.valueOf(vars[3]),
-                Difficulty.get(vars[4]), new Discipline(vars[5], Long.valueOf(vars[6])));
-    }
-
     public String getAverageMinimalPoint() {
         long result = 0;
         if (collection.size() == 0) return String.valueOf(result);
@@ -82,7 +81,7 @@ public class Editor {
             if (collection.get(key).getDiscipline().equals(discipline)) {
                 collection.remove(key);
                 return "Successfully removed element.";
-            } // else System.out.println(collection.get(key).getDiscipline());
+            }
         }
         return "No matches.";
     }

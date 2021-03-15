@@ -23,6 +23,16 @@ public class GUI extends AbstractUI{
 
     @Override
     public void display(String status, String message) {
+        int constLength = 85;
+        if (message.length() > constLength) {
+            int parts = message.length() / constLength;
+            StringBuilder message2 = new StringBuilder();
+            for (int i=0; i<parts; i++) {
+                message2.append(message, i * constLength, (i + 1) * constLength);
+                message2.append("\n");
+            }
+            message = message2.toString();
+        }
         if (status.equals("Error")) JOptionPane.showMessageDialog(frame,
                 message, status, JOptionPane.ERROR_MESSAGE);
         else if (status.equals("Success")) JOptionPane.showMessageDialog(frame,

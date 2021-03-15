@@ -20,7 +20,7 @@ public abstract class AbstractUI implements UI{
 
     public AbstractUI() {
         cmdManager = new CMDManager();
-        editor = new Editor();
+        editor = new Editor("collection.json");
         cachedFilenames = new ArrayList<>();
         validator = new Validator();
         createUI();
@@ -77,7 +77,7 @@ public abstract class AbstractUI implements UI{
         if (flags[2]) {
             while (true) {
                 try {
-                    inputData.setCoordinateX(Integer.parseInt(askForArg("coordinateX")));
+                    inputData.setCoordinateX(Float.parseFloat(askForArg("coordinateX")));
                     break;
                 } catch (MoreThanException e) {
                     display("Error","Invalid coordinateX! Can't be more than " + e.getNumber());
@@ -89,7 +89,7 @@ public abstract class AbstractUI implements UI{
         if (flags[3]) {
             while (true) {
                 try {
-                    inputData.setCoordinateY(Integer.parseInt(askForArg("coordinateY")));
+                    inputData.setCoordinateY(Float.parseFloat(askForArg("coordinateY")));
                     break;
                 } catch (MoreThanException e) {
                     display("Error", "Invalid coordinateY! Can't be more than " + e.getNumber());
