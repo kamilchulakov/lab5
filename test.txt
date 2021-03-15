@@ -1,3 +1,5 @@
 help
 show
+remove_any_by_discipline
+show
 execute_script test.txt

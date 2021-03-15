@@ -31,7 +31,7 @@ public abstract class AbstractUI implements UI{
             if (isValidCommand(input)) {
                 if (isExecuteScript(input)) {
                     cachedFilenames = new ArrayList<>();
-                    display("It was execute script. But it is not working yet.");
+                    executeScript(input);
                 }
                 else {
                     String pureCommand = input.split(" ")[0];
@@ -147,55 +147,46 @@ public abstract class AbstractUI implements UI{
         return validator.validate(command);
     }
 
-    //private void executeScript(String input) {
-    //    try {
-    //        String filename = input.split(" ")[1];
-    //        if (!cachedFilenames.contains(filename)) {
-    //            cachedFilenames.add(filename);
-    //            executeScriptLoop(filename);
-    //        } else display("Prevented StackOverflow! Filename: " + filename);
-    //    } catch (ArrayIndexOutOfBoundsException e) {
-    //        display("Invalid filename. Try again!");
-    //    }
-    //}
-
-    //private void executeScriptLoop(String filename) {
-    //    try {
-    //        File file = new File(filename);
-    //        Scanner myReader = new Scanner(file);
-    //        while (myReader.hasNextLine()) {
-    //            String data = myReader.nextLine();
-    //            processCommandFromExecuteScriptLoop(data);
-    //        }
-    //        myReader.close();
-    //    } catch (FileNotFoundException e) {
-    //        display("Try again! Bad filename: " + filename + ".");
-    //    }
-    //}
-
-    private boolean needsArgs(String command) {
-        return validator.needsArgs(command);
+    private void executeScript(String input) {
+        try {
+            String filename = input.split(" ")[1];
+            if (!cachedFilenames.contains(filename)) {
+                cachedFilenames.add(filename);
+                executeScriptLoop(filename);
+            } else display("Prevented StackOverflow! Filename: " + filename);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            display("Invalid filename. Try again!");
+        }
     }
+
+    private void executeScriptLoop(String filename) {
+        try {
+            File file = new File(filename);
+            Scanner myReader = new Scanner(file);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                processCommandFromExecuteScriptLoop(data);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            display("Try again! Bad filename: " + filename + ".");
+        }
+    }
+
     private boolean isExecuteScript(String input) {
         return validator.isExecuteScript(input);
     }
-    private String ifNeedsArgsGetArgs(String input) {
-        if (needsArgs(input)) {
-            ArrayList<String> args = validator.getArgsForStringCommand(input);
-            for (String arg: args) input += " " + askForArg(arg);
+    private void processCommandFromExecuteScriptLoop(String input) {
+        if (isValidCommand(input)) {
+            if (isExecuteScript(input)) {
+                executeScript(input);
+            }
+            else {
+                String pureCommand = input.split(" ")[0];
+                InputData inputData = getInputData(input, pureCommand);
+                String result = cmdManager.execute(editor, pureCommand, inputData);
+                display(result);
+            }
         }
-        return input;
     }
-    //private void processCommandFromExecuteScriptLoop(String data) {
-    //    if (isValidCommand(data)) {
-    //        if (isExecuteScript(data)) {
-    //            executeScript(data);
-    //        }
-    //        else {
-    //            data = ifNeedsArgsGetArgs(data);
-    //           String result = cmdManager.execute(editor, data, new InputData());
-    //            display(result);
-    //        }
-    //    }
-    //}
 }
