@@ -7,15 +7,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FabricForCommands {
-    public ArrayList<Command> getAllCommandsArrayList() {
-        ArrayList<Command> arrayList = new ArrayList<>();
+    private ArrayList<Command> arrayList = new ArrayList<>();
+    private ArrayList<String> noInputCommands = new ArrayList<>();
+    private ArrayList<String> oneArgCommands = new ArrayList<>();
+    private ArrayList<String> elementCommands = new ArrayList<>();
+    private ArrayList<String> disciplineCommands = new ArrayList<>();
+
+    public FabricForCommands() {
         addCommandsToList(arrayList);
-        return arrayList;
+        addCommandToTypedLists();
     }
-    public LinkedList<Command> getAllCommandsLinkedList() {
-        LinkedList<Command> linkedList = new LinkedList<>();
-        addCommandsToList(linkedList);
-        return linkedList;
+
+    public ArrayList<Command> getAllCommandsArrayList() {
+        return arrayList;
     }
 
     private void addCommandsToList(List<Command> list) {
@@ -31,5 +35,45 @@ public class FabricForCommands {
         list.add(new AverageMinimalPoint());
         list.add(new PrintDescendingDifficulty());
         list.add(new RemoveAnyByDiscipline());
+    }
+
+    private void addCommandToTypedLists() {
+        for (Command command: arrayList) {
+            for (CommandType commandType: command.getCommandType()) {
+                if (commandType == CommandType.NOINPUT) noInputCommands.add(command.getName());
+                else if (commandType == CommandType.ONEARG) oneArgCommands.add(command.getName());
+                else if (commandType == CommandType.DISCIPLINE) disciplineCommands.add(command.getName());
+                else if (commandType == CommandType.ELEMENT) elementCommands.add(command.getName());
+            }
+        }
+    }
+
+    public ArrayList<String> getNoInputCommands() {
+        return noInputCommands;
+    }
+
+    public ArrayList<String> getOneArgCommands() {
+        return oneArgCommands;
+    }
+
+    public ArrayList<String> getElementCommands() {
+        return elementCommands;
+    }
+
+    public ArrayList<String> getDisciplineCommands() {
+        return disciplineCommands;
+    }
+
+    public boolean ifContainsInNoInputCommands(String command) {
+        return noInputCommands.contains(command);
+    }
+    public boolean ifContainsInElementCommands(String command) {
+        return elementCommands.contains(command);
+    }
+    public boolean ifContainsInDisciplineCommands(String command) {
+        return disciplineCommands.contains(command);
+    }
+    public boolean ifContainsInOneArgCommands(String command) {
+        return oneArgCommands.contains(command);
     }
 }

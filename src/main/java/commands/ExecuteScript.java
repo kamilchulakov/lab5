@@ -1,8 +1,9 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 
-public class ExecuteScript implements Command{
+public class ExecuteScript extends AbstractOneArgCommand{
     @Override
     public String getName() {
         return "execute_script";
@@ -14,7 +15,7 @@ public class ExecuteScript implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
         return "";
     }
 }

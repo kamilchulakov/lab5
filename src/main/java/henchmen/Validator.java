@@ -52,4 +52,33 @@ public class Validator {
         }
         return arrayList;
     }
+    public boolean[] getInputDataFlagsForCommand(String command) {
+        boolean[] flags = new boolean[8];
+        flags[0] = false;
+        flags[1] = false;
+        flags[2] = false;
+        flags[3] = false;
+        flags[4] = false;
+        flags[5] = false;
+        flags[6] = false;
+        flags[7] = false;
+
+        FabricForCommands fabric = new FabricForCommands();
+        if (fabric.ifContainsInNoInputCommands(command)) return flags;
+        if (fabric.ifContainsInOneArgCommands(command)) flags[0] = true;
+        if (fabric.ifContainsInDisciplineCommands(command)) {
+            flags[7] = true;
+            flags[6] = true;
+        }
+        if (fabric.ifContainsInElementCommands(command)) {
+            flags[1] = true;
+            flags[2] = true;
+            flags[3] = true;
+            flags[4] = true;
+            flags[5] = true;
+            flags[6] = true;
+            flags[7] = true;
+        }
+        return flags;
+    }
 }

@@ -1,8 +1,9 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 
-public class Clear implements Command{
+public class Clear extends AbstractNoInputCommand{
     @Override
     public String getName() {
         return "clear";
@@ -14,7 +15,7 @@ public class Clear implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
         editor.clear();
         return "Successfully cleared the collection.";
     }

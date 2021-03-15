@@ -1,8 +1,9 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 
-public class AverageMinimalPoint implements Command{
+public class AverageMinimalPoint extends AbstractNoInputCommand{
     @Override
     public String getName() {
         return "average_of_minimal_point";
@@ -14,7 +15,7 @@ public class AverageMinimalPoint implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
         return editor.getAverageMinimalPoint();
     }
 }

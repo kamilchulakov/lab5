@@ -1,11 +1,12 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 import objects.LabWork;
 
 import java.util.HashMap;
 
-public class History implements Command{
+public class History extends AbstractNoInputCommand{
     @Override
     public String getName() {
         return "history";
@@ -17,7 +18,7 @@ public class History implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
         return "this message shouldn't be here!";
     }
 }

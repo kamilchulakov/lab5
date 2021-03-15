@@ -1,8 +1,9 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 
-public class Show implements Command{
+public class Show extends AbstractNoInputCommand{
     @Override
     public String getName() {
         return "show";
@@ -14,7 +15,7 @@ public class Show implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
         return editor.getStringCollection();
     }
 }

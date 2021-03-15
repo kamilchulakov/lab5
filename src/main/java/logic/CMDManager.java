@@ -15,19 +15,14 @@ public class CMDManager {
     private String getHistory(int number) {
         return commandHistory.getPureHistory(number);
     }
-    public String execute(Editor editor, String commandWithArgs) {
+    public String execute(Editor editor, String justCommand, InputData inputData) {
         //System.out.println(commandWithArgs);
-        String justCommand = getPureCommandName(commandWithArgs);
         Command command = getCommandByString(justCommand);
-        commandHistory.add(commandWithArgs);
+        commandHistory.add(justCommand);
         if (justCommand.equals("history")) return getHistory(7);
         String result;
         try {
-            if (needsArgs(justCommand))
-                result = command.exec(editor, getCommandArgs(commandWithArgs.split(justCommand)[1]));
-            else if (needsArg(justCommand))
-                result = command.exec(editor, getCommandArg(commandWithArgs));
-            else result = command.exec(editor, null);
+            result = command.exec(editor, inputData);
         } catch (NullPointerException e) {
             result = "Command was not found. Try again.";
         }

@@ -1,10 +1,11 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 
 import java.util.Calendar;
 
-public class Info implements Command{
+public class Info extends AbstractNoInputCommand{
     private Calendar calendar;
     public Info() {
         calendar = Calendar.getInstance();
@@ -21,7 +22,7 @@ public class Info implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
             return String.format("Collection info:\nType: %s\nDate: %s\nSize: %s",
                 editor.getCollection().getClass().getName(), calendar.getTime().toString(), editor.getCollection().size());
     }

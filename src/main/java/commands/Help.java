@@ -2,8 +2,9 @@ package commands;
 
 import henchmen.FabricForCommands;
 import logic.Editor;
+import logic.InputData;
 
-public class Help implements Command{
+public class Help extends AbstractNoInputCommand{
     @Override
     public String getName() {
         return "help";
@@ -16,7 +17,7 @@ public class Help implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
         FabricForCommands fabric = new FabricForCommands();
         StringBuilder stringBuilder = new StringBuilder();
         for (Command command: fabric.getAllCommandsArrayList())

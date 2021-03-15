@@ -1,9 +1,10 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 import objects.Discipline;
 
-public class RemoveAnyByDiscipline implements Command{
+public class RemoveAnyByDiscipline extends AbstractDisciplineCommand{
     @Override
     public String getName() {
         return "remove_any_by_discipline";
@@ -15,11 +16,11 @@ public class RemoveAnyByDiscipline implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
-        String name = args.split(" ")[0];
+    public String exec(Editor editor, InputData inputData) {
         String result;
         try {
-            Long hours = Long.valueOf(args.split(" ")[1]);
+            String name = inputData.getDisciplineName();
+            Long hours = inputData.getSelfStudyHours();
             Discipline discipline = new Discipline(name, hours);
             result = editor.removeByDiscipline(discipline);
         } catch (NumberFormatException numberFormatException) {

@@ -1,8 +1,9 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 
-public class PrintDescendingDifficulty implements Command{
+public class PrintDescendingDifficulty extends AbstractNoInputCommand{
     @Override
     public String getName() {
         return "print_field_descending_difficulty";
@@ -14,7 +15,7 @@ public class PrintDescendingDifficulty implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
         return editor.getDescendingDifficulty();
     }
 }

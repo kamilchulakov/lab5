@@ -1,11 +1,12 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 import objects.LabWork;
 
 import java.util.HashMap;
 
-public class Exit implements Command{
+public class Exit extends AbstractNoInputCommand{
     @Override
     public String getName() {
         return "exit";
@@ -17,7 +18,7 @@ public class Exit implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
         System.exit(0);
         return "just exit by clicking!";
     }

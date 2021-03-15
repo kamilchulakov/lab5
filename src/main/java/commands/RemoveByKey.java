@@ -1,11 +1,12 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
 import objects.LabWork;
 
 import java.util.HashMap;
 
-public class RemoveByKey implements Command{
+public class RemoveByKey extends AbstractOneArgCommand{
 
     @Override
     public String getName() {
@@ -18,9 +19,9 @@ public class RemoveByKey implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
-        if (!editor.getCollection().containsKey(args)) return "Key was not found!";
-        editor.removeElementByKey(args);
+    public String exec(Editor editor, InputData inputData) {
+        if (!editor.getCollection().containsKey(inputData.getCommandArg())) return "Key was not found!";
+        editor.removeElementByKey(inputData.getCommandArg());
         return "Successfully removed the element.";
     }
 }

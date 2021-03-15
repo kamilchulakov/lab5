@@ -14,7 +14,7 @@ public class Editor {
         collection = fabricLabWorks.getTestingMaterial();
     }
     public Editor(String filename) {
-        super();
+        this();
     }
 
     public HashMap<String, LabWork> getCollection() {

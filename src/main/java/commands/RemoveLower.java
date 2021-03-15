@@ -1,9 +1,12 @@
 package commands;
 
 import logic.Editor;
+import logic.InputData;
+import objects.Coordinates;
+import objects.Discipline;
 import objects.LabWork;
 
-public class RemoveLower implements Command{
+public class RemoveLower extends AbstractElementCommand{
     @Override
     public String getName() {
         return "remove_lower";
@@ -15,9 +18,15 @@ public class RemoveLower implements Command{
     }
 
     @Override
-    public String exec(Editor editor, String args) {
+    public String exec(Editor editor, InputData inputData) {
         try {
-            editor.removeAllLowerByLabwork(editor.getElementFromString(args));
+            String name = inputData.getDisciplineName();
+            Long hours = inputData.getSelfStudyHours();
+            Discipline discipline = new Discipline(name, hours);
+            Coordinates coordinates = new Coordinates(inputData.getCoordinateX(), inputData.getCoordinateY());
+            LabWork labwork = new LabWork(inputData.getLabName(), coordinates, inputData.getMinimalPoint(),
+                    inputData.getDifficulty(),discipline);
+            editor.removeAllLowerByLabwork(labwork);
         } catch (Exception e) {
             e.printStackTrace();
             return "Some problems with input data.";
