@@ -1,11 +1,12 @@
-package commands;
+package commands.discipline;
 
+import commands.discipline.AbstractDisciplineCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
 import objects.Discipline;
 
-public class RemoveAnyByDiscipline extends AbstractDisciplineCommand{
+public class RemoveAnyByDiscipline extends AbstractDisciplineCommand {
     @Override
     public String getName() {
         return "remove_any_by_discipline";

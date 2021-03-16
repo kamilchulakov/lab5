@@ -1,10 +1,11 @@
-package commands;
+package commands.onearg;
 
+import commands.onearg.AbstractOneArgCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
 
-public class ExecuteScript extends AbstractOneArgCommand{
+public class ExecuteScript extends AbstractOneArgCommand {
     @Override
     public String getName() {
         return "execute_script";

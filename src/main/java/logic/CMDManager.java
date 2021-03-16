@@ -1,6 +1,7 @@
 package logic;
 
 import commands.Command;
+import henchmen.CommandHistory;
 import henchmen.FabricForCommands;
 
 import java.util.*;

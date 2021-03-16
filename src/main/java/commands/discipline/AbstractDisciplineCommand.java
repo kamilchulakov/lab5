@@ -1,6 +1,9 @@
-package commands;
+package commands.discipline;
 
-public abstract class AbstractDisciplineCommand implements Command{
+import commands.Command;
+import commands.CommandType;
+
+public abstract class AbstractDisciplineCommand implements Command {
     @Override
     public CommandType[] getCommandType() {
         CommandType[] commandTypes = new CommandType[1];

@@ -105,7 +105,7 @@ public class Editor {
     public void save(String filename) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
-        writer.writeValue(Paths.get("collection.json").toFile(), collection);
+        writer.writeValue(Paths.get(filename).toFile(), collection);
     }
 
     public void removeIfLower(String key, LabWork labWork) {

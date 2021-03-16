@@ -1,4 +1,4 @@
-package logic;
+package henchmen;
 
 import commands.Command;
 

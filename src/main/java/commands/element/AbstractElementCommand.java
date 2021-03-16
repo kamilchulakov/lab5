@@ -1,6 +1,9 @@
-package commands;
+package commands.element;
 
-public abstract class AbstractElementCommand implements Command{
+import commands.Command;
+import commands.CommandType;
+
+public abstract class AbstractElementCommand implements Command {
     @Override
     public CommandType[] getCommandType() {
         CommandType[] commandTypes = new CommandType[1];

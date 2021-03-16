@@ -1,13 +1,11 @@
-package commands;
+package commands.noinput;
 
+import commands.noinput.AbstractNoInputCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
-import objects.LabWork;
 
-import java.util.HashMap;
-
-public class Exit extends AbstractNoInputCommand{
+public class Exit extends AbstractNoInputCommand {
     @Override
     public String getName() {
         return "exit";

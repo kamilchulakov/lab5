@@ -1,11 +1,12 @@
-package commands;
+package commands.oneargelement;
 
+import commands.oneargelement.AbstractOneArgElement;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
 import objects.FabricLabWorks;
 
-public class ReplaceIfLower extends AbstractOneArgElement{
+public class ReplaceIfLower extends AbstractOneArgElement {
     @Override
     public String getName() {
         return "replace_if_lower";

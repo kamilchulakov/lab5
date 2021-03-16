@@ -1,14 +1,13 @@
-package commands;
+package commands.oneargelement;
 
+import commands.oneargelement.AbstractOneArgElement;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
-import objects.Coordinates;
-import objects.Discipline;
 import objects.FabricLabWorks;
 import objects.LabWork;
 
-public class InsertKey extends AbstractOneArgElement{
+public class InsertKey extends AbstractOneArgElement {
     @Override
     public String getName() {
         return "insert";

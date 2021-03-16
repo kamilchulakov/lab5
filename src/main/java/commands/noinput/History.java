@@ -1,13 +1,11 @@
-package commands;
+package commands.noinput;
 
+import commands.noinput.AbstractNoInputCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
-import objects.LabWork;
 
-import java.util.HashMap;
-
-public class History extends AbstractNoInputCommand{
+public class History extends AbstractNoInputCommand {
     @Override
     public String getName() {
         return "history";

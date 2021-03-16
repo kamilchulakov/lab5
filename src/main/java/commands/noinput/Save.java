@@ -1,12 +1,13 @@
-package commands;
+package commands.noinput;
 
+import commands.noinput.AbstractNoInputCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
 
 import java.io.IOException;
 
-public class Save extends AbstractNoInputCommand{
+public class Save extends AbstractNoInputCommand {
     @Override
     public String getName() {
         return "save";

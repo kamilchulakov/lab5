@@ -1,13 +1,11 @@
-package commands;
+package commands.onearg;
 
+import commands.onearg.AbstractOneArgCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
-import objects.LabWork;
 
-import java.util.HashMap;
-
-public class RemoveByKey extends AbstractOneArgCommand{
+public class RemoveByKey extends AbstractOneArgCommand {
 
     @Override
     public String getName() {

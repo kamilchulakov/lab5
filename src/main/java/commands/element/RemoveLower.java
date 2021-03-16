@@ -1,22 +1,21 @@
-package commands;
+package commands.element;
 
+import commands.element.AbstractElementCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
 import objects.FabricLabWorks;
 import objects.LabWork;
 
-import java.util.NoSuchElementException;
-
-public class Update extends AbstractOneArgElement{
+public class RemoveLower extends AbstractElementCommand {
     @Override
     public String getName() {
-        return "update";
+        return "remove_lower";
     }
 
     @Override
     public String getDescription() {
-        return "update <id> - a command which updates element values by id.";
+        return "remove_lower <key> - a command which removes the elements\nwhich are lower than <key> one.";
     }
 
     @Override
@@ -24,12 +23,11 @@ public class Update extends AbstractOneArgElement{
         try {
             FabricLabWorks fabricLabWorks = new FabricLabWorks();
             LabWork labwork = fabricLabWorks.makeLabworkFromInputData(inputData);
-            editor.update(Integer.parseInt(inputData.getCommandArg()), labwork);
-        } catch (NoSuchElementException e) {
-            return new OutputData("Error", "Invalid id: no such element");
+            editor.removeAllLowerByLabwork(labwork);
         } catch (Exception e) {
             e.printStackTrace();
-            return new OutputData("Error", "Something went wrong.");
-        } return new OutputData("Success", "Updated.");
+            return new OutputData("Failure", "Some problems with input data.");
+        }
+        return new OutputData("Success", "Removed.");
     }
 }

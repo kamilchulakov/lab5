@@ -1,6 +1,9 @@
-package commands;
+package commands.onearg;
 
-public abstract class AbstractOneArgCommand implements Command{
+import commands.Command;
+import commands.CommandType;
+
+public abstract class AbstractOneArgCommand implements Command {
     @Override
     public CommandType[] getCommandType() {
         CommandType[] commandTypes = new CommandType[1];

@@ -1,12 +1,13 @@
-package commands;
+package commands.noinput;
 
+import commands.noinput.AbstractNoInputCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
 
 import java.util.Calendar;
 
-public class Info extends AbstractNoInputCommand{
+public class Info extends AbstractNoInputCommand {
     private Calendar calendar;
     public Info() {
         calendar = Calendar.getInstance();

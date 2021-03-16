@@ -1,10 +1,11 @@
-package commands;
+package commands.noinput;
 
+import commands.noinput.AbstractNoInputCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
 
-public class AverageMinimalPoint extends AbstractNoInputCommand{
+public class AverageMinimalPoint extends AbstractNoInputCommand {
     @Override
     public String getName() {
         return "average_of_minimal_point";

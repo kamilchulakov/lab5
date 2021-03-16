@@ -1,9 +1,16 @@
 package henchmen;
 
 import commands.*;
+import commands.discipline.RemoveAnyByDiscipline;
+import commands.element.RemoveLower;
+import commands.noinput.*;
+import commands.onearg.ExecuteScript;
+import commands.onearg.RemoveByKey;
+import commands.oneargelement.InsertKey;
+import commands.oneargelement.ReplaceIfLower;
+import commands.oneargelement.Update;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class FabricForCommands {

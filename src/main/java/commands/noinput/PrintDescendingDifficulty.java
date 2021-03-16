@@ -1,10 +1,11 @@
-package commands;
+package commands.noinput;
 
+import commands.noinput.AbstractNoInputCommand;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
 
-public class PrintDescendingDifficulty extends AbstractNoInputCommand{
+public class PrintDescendingDifficulty extends AbstractNoInputCommand {
     @Override
     public String getName() {
         return "print_field_descending_difficulty";
