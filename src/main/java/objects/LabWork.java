@@ -94,11 +94,28 @@ public class LabWork implements Comparable<LabWork>{
 
     @Override
     public String toString() {
-        return "LabWork{" +
+        return "{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", coordinates=" + coordinates +
+                ", creationDate=" + getStringForCreationDate() +
                 ", minimalPoint=" + minimalPoint +
-                ", discipline=" + discipline + '\n' +
-                "}\n";
+                ", difficulty=" + difficulty +
+                ", discipline=" + discipline +
+                '}';
+    }
+    private String getStringForCreationDate() {
+        return "{" +
+                "year=" + creationDate.getYear() +
+                ", month=" + creationDate.getMonth() +
+                ", monthValue=" + creationDate.getMonthValue() +
+                ", dayOfMonth=" + creationDate.getDayOfMonth() +
+                ", chronology={id=" + creationDate.getChronology().getId() +
+                ", calendarType=" + creationDate.getChronology().getCalendarType() +
+                "}, dayOfWeek=" + creationDate.getDayOfWeek() +
+                ", leapYear=" + creationDate.isLeapYear() +
+                ", dayOfYear=" + creationDate.getDayOfYear() +
+                ", era=" + creationDate.getEra() +
+                "}";
     }
 }

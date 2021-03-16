@@ -31,6 +31,8 @@ public class GUI extends AbstractUI{
                 message2.append(message, i * constLength, (i + 1) * constLength);
                 message2.append("\n");
             }
+            message2.append(message.substring(parts * constLength));
+            message2.append("\n");
             message = message2.toString();
         }
         if (status.equals("Error")) JOptionPane.showMessageDialog(frame,

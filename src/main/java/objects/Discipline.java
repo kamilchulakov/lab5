@@ -20,7 +20,7 @@ public class Discipline {
 
     @Override
     public String toString() {
-        return "Discipline{" +
+        return "{" +
                 "name='" + name + '\'' +
                 ", selfStudyHours=" + selfStudyHours +
                 '}';
@@ -38,4 +38,6 @@ public class Discipline {
     public int hashCode() {
         return Objects.hash(name, selfStudyHours);
     }
+
+
 }
