@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import objects.*;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -105,7 +106,7 @@ public class Editor {
     public void save(String filename) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
-        writer.writeValue(Paths.get(filename).toFile(), collection);
+        writer.writeValue(new FileOutputStream(Paths.get(filename).toFile()), collection);
     }
 
     public void removeIfLower(String key, LabWork labWork) {
