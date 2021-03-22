@@ -23,8 +23,8 @@ public class GUI extends AbstractUI{
 
     @Override
     public void display(String status, String message) {
-        int constLength = 85;
-        if (message.length() > constLength) {
+        int constLength = 150;
+        if (message.length() > constLength & !message.contains("help")) {
             int parts = message.length() / constLength;
             StringBuilder message2 = new StringBuilder();
             for (int i=0; i<parts; i++) {

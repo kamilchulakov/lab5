@@ -57,88 +57,29 @@ public abstract class AbstractUI implements UI{
     private InputData getInputData(String input, String pureCommand) {
         InputData inputData = new InputData();
         boolean[] flags = validator.getInputDataFlagsForCommand(pureCommand);
-        if (flags[0]) {
-            if (input.split(" ").length == 1) {
-                inputData.setCommandArg(null);
-            } else {
-                inputData.setCommandArg(input.split(" ")[1]);
-            }
+        if (needsArg(flags)) {
+            setArgToInputDataLoop(input, inputData);
         }
-        if (flags[1]) {
-            while (true) {
-                try {
-                    inputData.setLabName(askForArg("labwork name"));
-                    break;
-                } catch (Exception e) {
-                    display("Error","Invalid labwork name! Can't be null.");
-                }
-            }
+        if (needsName(flags)) {
+            setLabNameToInputDataLoop(inputData);
         }
-        if (flags[2]) {
-            while (true) {
-                try {
-                    inputData.setCoordinateX(Float.parseFloat(askForArg("coordinateX")));
-                    break;
-                } catch (MoreThanException e) {
-                    display("Error","Invalid coordinateX! Can't be more than " + e.getNumber());
-                } catch (Exception e) {
-                    display("Error","Invalid coordinateX!");
-                }
-            }
+        if (needsCoordinateX(flags)) {
+            setCorXToInputDataLoop(inputData);
         }
-        if (flags[3]) {
-            while (true) {
-                try {
-                    inputData.setCoordinateY(Float.parseFloat(askForArg("coordinateY")));
-                    break;
-                } catch (MoreThanException e) {
-                    display("Error", "Invalid coordinateY! Can't be more than " + e.getNumber());
-                } catch (NumberFormatException e) {
-                    display("Error", "Invalid coordinateY! Check number format.");
-                } catch (Exception e) {
-                    display("Error","Invalid coordinateY!");
-                }
-            }
+        if (needsCoordinateY(flags)) {
+            setCorYToInputDataLoop(inputData);
         }
-        if (flags[4]) {
-            while (true) {
-                try {
-                    inputData.setMinimalPoint(Long.parseLong(askForArg("minimal point")));
-                    break;
-                } catch (Exception e) {
-                    display("Error","Invalid minimal point! Can't be more less than 1.");
-                }
-            }
+        if (needsMinimalPoint(flags)) {
+            setMinimalPointToInputDataLoop(inputData);
         }
-        if (flags[5]) {
-            while (true) {
-                try {
-                    inputData.setDifficulty(askForArg("difficulty: EASY, IMPOSSIBLE or TERRIBLE"));
-                    break;
-                } catch (Exception e) {
-                    display("Error","Invalid difficulty! Must be easy, impossible or terrible.");
-                }
-            }
+        if (needsDifficulty(flags)) {
+            setDifficultyToInputDataLoop(inputData);
         }
-        if (flags[6]) {
-            while (true) {
-                try {
-                    inputData.setDisciplineName(askForArg("discipline name"));
-                    break;
-                } catch (Exception e) {
-                    display("Error","Invalid discipline name! Can't be null.");
-                }
-            }
+        if (needsDiscName(flags)) {
+            setDiscNameToInputDataLoop(inputData);
         }
-        if (flags[7]) {
-            while (true) {
-                try {
-                    inputData.setSelfStudyHours(Long.parseLong(askForArg("study hours")));
-                    break;
-                } catch (Exception e) {
-                    display("Error","Invalid study hours. Can't be null.");
-                }
-            }
+        if (needsDiscHours(flags)) {
+            setDiscHoursToInputDataLoop(inputData);
         }
         return inputData;
     }
@@ -194,6 +135,113 @@ public abstract class AbstractUI implements UI{
                 InputData inputData = getInputData(input, pureCommand);
                 OutputData result = cmdManager.execute(editor, pureCommand, inputData);
                 display(result.getStatusMessage(), result.getResultMessage());
+            }
+        }
+    }
+    private boolean needsArg(boolean[] flags) {
+        return flags[0];
+    }
+    private boolean needsName(boolean[] flags) {
+        return flags[1];
+    }
+    private boolean needsCoordinateX(boolean[] flags) {
+        return flags[2];
+    }
+    private boolean needsCoordinateY(boolean[] flags) {
+        return flags[3];
+    }
+    private boolean needsMinimalPoint(boolean[] flags) {
+        return flags[4];
+    }
+    private boolean needsDifficulty(boolean[] flags) {
+        return flags[5];
+    }
+    private boolean needsDiscName(boolean[] flags) {
+        return flags[6];
+    }
+    private boolean needsDiscHours(boolean[] flags) {
+        return flags[7];
+    }
+    private void setArgToInputDataLoop(String input, InputData inputData) {
+        if (input.split(" ").length == 1) {
+            inputData.setCommandArg(null);
+        } else {
+            inputData.setCommandArg(input.split(" ")[1]);
+        }
+    }
+    private void setLabNameToInputDataLoop(InputData inputData) {
+        while (true) {
+            try {
+                inputData.setLabName(askForArg("labwork name"));
+                break;
+            } catch (Exception e) {
+                display("Error","Invalid labwork name! Can't be null.");
+            }
+        }
+    }
+    private void setCorXToInputDataLoop(InputData inputData) {
+        while (true) {
+            try {
+                inputData.setCoordinateX(Float.parseFloat(askForArg("coordinateX")));
+                break;
+            } catch (MoreThanException e) {
+                display("Error","Invalid coordinateX! Can't be more than " + e.getNumber());
+            } catch (Exception e) {
+                display("Error","Invalid coordinateX!");
+            }
+        }
+    }
+    private void setCorYToInputDataLoop(InputData inputData) {
+        while (true) {
+            try {
+                inputData.setCoordinateY(Float.parseFloat(askForArg("coordinateY")));
+                break;
+            } catch (MoreThanException e) {
+                display("Error", "Invalid coordinateY! Can't be more than " + e.getNumber());
+            } catch (NumberFormatException e) {
+                display("Error", "Invalid coordinateY! Check number format.");
+            } catch (Exception e) {
+                display("Error","Invalid coordinateY!");
+            }
+        }
+    }
+    private void setMinimalPointToInputDataLoop(InputData inputData) {
+        while (true) {
+            try {
+                inputData.setMinimalPoint(Long.parseLong(askForArg("minimal point")));
+                break;
+            } catch (Exception e) {
+                display("Error","Invalid minimal point! Can't be less than 1.");
+            }
+        }
+    }
+    private void setDifficultyToInputDataLoop(InputData inputData) {
+        while (true) {
+            try {
+                inputData.setDifficulty(askForArg("difficulty: EASY, IMPOSSIBLE or TERRIBLE"));
+                break;
+            } catch (Exception e) {
+                display("Error","Invalid difficulty! Must be easy, impossible or terrible.");
+            }
+        }
+    }
+    private void setDiscNameToInputDataLoop(InputData inputData) {
+        while (true) {
+            try {
+                inputData.setDisciplineName(askForArg("discipline name"));
+                break;
+            } catch (Exception e) {
+                display("Error","Invalid discipline name! Can't be null.");
+            }
+        }
+    }
+    private void setDiscHoursToInputDataLoop(InputData inputData) {
+        while (true) {
+            try {
+                inputData.setSelfStudyHours(Long.parseLong(askForArg("study hours")));
+                break;
+            } catch (Exception e) {
+                display("Error","Invalid study hours. Can't be null.");
             }
         }
     }
