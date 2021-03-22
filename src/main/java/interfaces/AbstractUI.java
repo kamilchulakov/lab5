@@ -30,18 +30,17 @@ public abstract class AbstractUI implements UI{
     public final void run() {
         while (true) {
             String input = askForCommand();
-            if (isValidCommand(input)) {
-                if (isExecuteScript(input)) {
-                    cachedFilenames = new ArrayList<>();
-                    executeScript(input);
-                }
-                else {
-                    String pureCommand = input.split(" ")[0];
-                    InputData inputData = getInputData(input, pureCommand);
-                    OutputData result = cmdManager.execute(editor, pureCommand, inputData);
-                    display(result.getStatusMessage(), result.getResultMessage());
-                }
+            if (isExecuteScript(input)) {
+                cachedFilenames = new ArrayList<>();
+                executeScript(input);
             }
+            else {
+                String pureCommand = input.split(" ")[0];
+                InputData inputData = getInputData(input, pureCommand);
+                OutputData result = cmdManager.execute(editor, pureCommand, inputData);
+                display(result.getStatusMessage(), result.getResultMessage());
+            }
+
         }
     }
 
@@ -50,7 +49,6 @@ public abstract class AbstractUI implements UI{
         if (isValidCommand(input)) {
             return input;
         } else {
-            display("Error","Try again.");
             return "";
         }
     }

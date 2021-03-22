@@ -27,7 +27,7 @@ public class CMDManager {
         try {
             result = command.exec(editor, inputData);
         } catch (NullPointerException e) {
-            result = new OutputData("Failure", "Command was not found. Try again.");
+            result = new OutputData("Error", "Command was not found. Try again.");
         }
         return result;
     }
