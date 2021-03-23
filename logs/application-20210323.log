@@ -1,0 +1,30 @@
+2021-03-23 20:54:26.221 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-23 20:54:29.070 [main] INFO  interfaces.UI - Got a valid command: help
+2021-03-23 20:54:29.070 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 20:54:29.071 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 20:54:29.073 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-23 20:54:29.073 [main] INFO  interfaces.UI - This is result:
+help - a command which gives an information about
+every single command which is supported in this app.
+history - a command to show history of commands usage!
+exit - a command to exit everything.
+show - a command which shows the collection items
+info - a command to get info about the collection:
+ type, time, etc
+remove_key <key> - a command which removes an element by key.
+clear - a command to clear the collection.
+remove_lower <key> - a command which removes the elements
+which are lower than <key> one.
+execute_script <filename> - a command which executes a script.
+average_of_minimal_point - a command which show an average
+ minimal point field value of collection items.
+print_field_descending_difficulty - a command which prints descending difficulty.
+remove_any_by_discipline <discipline> - a command to remove by disc.
+insert <key> - a command which asks to give element info and inserts it by key.
+update <id> - a command which updates element values by id.
+replace_if_lower <key> - a command which removes element if lower than provided.
+save - a command which saves the collection into collection.json
+
+2021-03-23 20:54:32.957 [main] INFO  interfaces.UI - Got a valid command: exit
+2021-03-23 20:54:32.957 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 20:54:32.957 [main] INFO  interfaces.UI - No input data was provided.
