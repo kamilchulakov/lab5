@@ -4,6 +4,8 @@ import input_exceptions.MoreThanException;
 import objects.Coordinates;
 import objects.Difficulty;
 
+import java.util.Objects;
+
 public class InputData {
     private String commandArg; //Поле может быть null Строка не может быть пустой
     private String labName; //Поле не может быть null Строка не может быть пустой
@@ -78,5 +80,25 @@ public class InputData {
 
     public void setSelfStudyHours(Long selfStudyHours) {
         this.selfStudyHours = selfStudyHours;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InputData inputData = (InputData) o;
+        return Float.compare(inputData.coordinateX, coordinateX) == 0 &&
+                Float.compare(inputData.coordinateY, coordinateY) == 0 &&
+                Objects.equals(commandArg, inputData.commandArg) &&
+                Objects.equals(labName, inputData.labName) &&
+                Objects.equals(minimalPoint, inputData.minimalPoint) &&
+                difficulty == inputData.difficulty &&
+                Objects.equals(disciplineName, inputData.disciplineName) &&
+                Objects.equals(selfStudyHours, inputData.selfStudyHours);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(commandArg, labName, coordinateX, coordinateY, minimalPoint, difficulty, disciplineName, selfStudyHours);
     }
 }
