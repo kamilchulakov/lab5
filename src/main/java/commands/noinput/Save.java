@@ -1,6 +1,7 @@
 package commands.noinput;
 
 import commands.noinput.AbstractNoInputCommand;
+import henchmen.PropertiesGetter;
 import logic.Editor;
 import logic.InputData;
 import logic.OutputData;
@@ -21,8 +22,9 @@ public class Save extends AbstractNoInputCommand {
     @Override
     public OutputData exec(Editor editor, InputData inputData) {
         try {
-            editor.save("collection.json");
-            return new OutputData("Success", "Saved into collection.json!");
+            PropertiesGetter propertiesGetter = new PropertiesGetter();
+            editor.save(propertiesGetter.getOutputFilename());
+            return new OutputData("Success", String.format("Saved into %s!", propertiesGetter.getOutputFilename()));
         } catch (IOException e) {
             e.printStackTrace();
             return new OutputData("Failure", "It is not cool: IOException.");

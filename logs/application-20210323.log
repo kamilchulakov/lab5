@@ -28,3 +28,139 @@ save - a command which saves the collection into collection.json
 2021-03-23 20:54:32.957 [main] INFO  interfaces.UI - Got a valid command: exit
 2021-03-23 20:54:32.957 [main] INFO  interfaces.UI - Getting input data.
 2021-03-23 20:54:32.957 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:11:31.246 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-23 21:11:33.727 [main] INFO  interfaces.UI - Got a valid command: help
+2021-03-23 21:11:33.727 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 21:11:33.728 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:11:33.729 [main] INFO  logic.CMDManager - Executing command...
+2021-03-23 21:11:33.732 [main] INFO  logic.CMDManager - Executed command.
+2021-03-23 21:11:33.732 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-23 21:11:33.732 [main] INFO  interfaces.UI - This is result:
+help - a command which gives an information about
+every single command which is supported in this app.
+history - a command to show history of commands usage!
+exit - a command to exit everything.
+show - a command which shows the collection items
+info - a command to get info about the collection:
+ type, time, etc
+remove_key <key> - a command which removes an element by key.
+clear - a command to clear the collection.
+remove_lower <key> - a command which removes the elements
+which are lower than <key> one.
+execute_script <filename> - a command which executes a script.
+average_of_minimal_point - a command which show an average
+ minimal point field value of collection items.
+print_field_descending_difficulty - a command which prints descending difficulty.
+remove_any_by_discipline <discipline> - a command to remove by disc.
+insert <key> - a command which asks to give element info and inserts it by key.
+update <id> - a command which updates element values by id.
+replace_if_lower <key> - a command which removes element if lower than provided.
+save - a command which saves the collection into collection.json
+
+2021-03-23 21:11:39.758 [main] INFO  interfaces.UI - Got a valid command: exit
+2021-03-23 21:11:39.758 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 21:11:39.758 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:11:39.758 [main] INFO  logic.CMDManager - Executing command...
+2021-03-23 21:12:05.381 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-23 21:12:09.987 [main] WARN  interfaces.UI - Got an invalid command.
+2021-03-23 21:12:09.987 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 21:12:09.998 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:12:09.998 [main] INFO  logic.CMDManager - Executing command...
+2021-03-23 21:12:09.999 [main] ERROR logic.CMDManager - Command was not found.
+2021-03-23 21:12:09.999 [main] INFO  interfaces.UI - This is result status: Error
+2021-03-23 21:12:09.999 [main] INFO  interfaces.UI - This is result:
+Command was not found. Try again.
+2021-03-23 21:14:01.040 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-23 21:14:03.189 [main] INFO  interfaces.UI - Got a valid command: help
+2021-03-23 21:14:03.196 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 21:14:03.205 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:14:03.205 [main] INFO  logic.CMDManager - Executing command...
+2021-03-23 21:14:03.249 [main] INFO  logic.CMDManager - Executed command.
+2021-03-23 21:14:03.250 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-23 21:14:03.250 [main] INFO  interfaces.UI - This is result:
+help - a command which gives an information about
+every single command which is supported in this app.
+history - a command to show history of commands usage!
+exit - a command to exit everything.
+show - a command which shows the collection items
+info - a command to get info about the collection:
+ type, time, etc
+remove_key <key> - a command which removes an element by key.
+clear - a command to clear the collection.
+remove_lower <key> - a command which removes the elements
+which are lower than <key> one.
+execute_script <filename> - a command which executes a script.
+average_of_minimal_point - a command which show an average
+ minimal point field value of collection items.
+print_field_descending_difficulty - a command which prints descending difficulty.
+remove_any_by_discipline <discipline> - a command to remove by disc.
+insert <key> - a command which asks to give element info and inserts it by key.
+update <id> - a command which updates element values by id.
+replace_if_lower <key> - a command which removes element if lower than provided.
+save - a command which saves the collection into collection.json
+
+2021-03-23 21:14:08.327 [main] INFO  interfaces.UI - Got a valid command: history
+2021-03-23 21:14:08.328 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 21:14:08.331 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:14:08.331 [main] INFO  logic.CMDManager - Executing command...
+2021-03-23 21:14:08.331 [main] INFO  logic.CMDManager - Recognized history.
+2021-03-23 21:14:08.332 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-23 21:14:08.332 [main] INFO  interfaces.UI - This is result:
+help
+history
+
+2021-03-23 21:14:39.530 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-23 21:14:43.028 [main] INFO  interfaces.UI - Got a valid command: save
+2021-03-23 21:14:43.029 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 21:14:43.030 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:14:43.030 [main] INFO  logic.CMDManager - Executing command...
+2021-03-23 21:14:43.111 [main] INFO  logic.CMDManager - Executed command.
+2021-03-23 21:14:43.111 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-23 21:14:43.111 [main] INFO  interfaces.UI - This is result:
+Saved into collection.json!
+2021-03-23 21:16:13.347 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-23 21:16:16.614 [main] INFO  interfaces.UI - Got a valid command: save
+2021-03-23 21:16:16.614 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 21:16:16.614 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:16:16.614 [main] INFO  logic.CMDManager - Executing command...
+2021-03-23 21:16:16.663 [main] INFO  logic.CMDManager - Executed command.
+2021-03-23 21:16:16.663 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-23 21:16:16.663 [main] INFO  interfaces.UI - This is result:
+Saved into collection.json!
+2021-03-23 21:17:15.287 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-23 21:17:18.493 [main] INFO  interfaces.UI - Got a valid command: help
+2021-03-23 21:17:18.493 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 21:17:18.494 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:17:18.494 [main] INFO  logic.CMDManager - Executing command...
+2021-03-23 21:17:18.495 [main] INFO  logic.CMDManager - Executed command.
+2021-03-23 21:17:18.495 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-23 21:17:18.495 [main] INFO  interfaces.UI - This is result:
+help - a command which gives an information about
+every single command which is supported in this app.
+history - a command to show history of commands usage!
+exit - a command to exit everything.
+show - a command which shows the collection items
+info - a command to get info about the collection:
+ type, time, etc
+remove_key <key> - a command which removes an element by key.
+clear - a command to clear the collection.
+remove_lower <key> - a command which removes the elements
+which are lower than <key> one.
+execute_script <filename> - a command which executes a script.
+average_of_minimal_point - a command which show an average
+ minimal point field value of collection items.
+print_field_descending_difficulty - a command which prints descending difficulty.
+remove_any_by_discipline <discipline> - a command to remove by disc.
+insert <key> - a command which asks to give element info and inserts it by key.
+update <id> - a command which updates element values by id.
+replace_if_lower <key> - a command which removes element if lower than provided.
+save - a command which saves the collection into collection.json
+
+2021-03-23 21:17:25.748 [main] INFO  interfaces.UI - Got a valid command: save
+2021-03-23 21:17:25.748 [main] INFO  interfaces.UI - Getting input data.
+2021-03-23 21:17:25.757 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-23 21:17:25.758 [main] INFO  logic.CMDManager - Executing command...
+2021-03-23 21:17:25.811 [main] INFO  logic.CMDManager - Executed command.
+2021-03-23 21:17:25.811 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-23 21:17:25.811 [main] INFO  interfaces.UI - This is result:
+Saved into collection2.json!
