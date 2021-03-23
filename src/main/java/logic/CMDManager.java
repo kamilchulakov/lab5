@@ -3,11 +3,14 @@ package logic;
 import commands.Command;
 import henchmen.CommandHistory;
 import henchmen.FabricForCommands;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
 public class CMDManager {
     private CommandHistory commandHistory = new CommandHistory();
+    private final Logger logger = LogManager.getLogger(CMDManager.class);
     private final ArrayList<Command> commands = new ArrayList<>();
     public CMDManager() {
         FabricForCommands fabricForCommands = new FabricForCommands();
@@ -21,12 +24,17 @@ public class CMDManager {
         if (inputData.getCommandArg() != null)
             commandHistory.add(justCommand + " " + inputData.getCommandArg());
         else commandHistory.add(justCommand);
-        if (justCommand.equals("history")) return
-                new OutputData("Success", getHistory(7));
+        logger.info("Executing command...");
+        if (justCommand.equals("history")) {
+            logger.info("Recognized history.");
+            return new OutputData("Success", getHistory(7));
+        }
         OutputData result;
         try {
             result = command.exec(editor, inputData);
+            logger.info("Executed command.");
         } catch (NullPointerException e) {
+            logger.error("Command was not found.");
             result = new OutputData("Error", "Command was not found. Try again.");
         }
         return result;
