@@ -20,7 +20,7 @@ public abstract class AbstractUI implements UI{
 
     public AbstractUI() {
         cmdManager = new CMDManager();
-        editor = new Editor("collection.json");
+        editor = new Editor();
         cachedFilenames = new ArrayList<>();
         validator = new Validator();
         createUI();

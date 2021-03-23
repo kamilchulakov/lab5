@@ -1,9 +1,27 @@
 package interfaces;
 
+import henchmen.Validator;
+import logic.CMDManager;
+import logic.Editor;
+
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class GUI extends AbstractUI{
     JFrame frame;
+
+    public GUI(String filename) {
+        cmdManager = new CMDManager();
+        editor = new Editor(filename);
+        cachedFilenames = new ArrayList<>();
+        validator = new Validator();
+        createUI();
+    }
+
+    public GUI() {
+        super();
+    }
+
     @Override
     protected String getArg(String arg) {
         return getInput("Type an "+ arg, arg);

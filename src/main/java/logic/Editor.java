@@ -3,6 +3,7 @@ package logic;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import henchmen.PropertiesGetter;
 import objects.*;
 
 import java.io.FileOutputStream;
@@ -16,16 +17,29 @@ public class Editor {
     HashMap<String, LabWork> collection;
 
     public Editor() {
-        FabricLabWorks fabricLabWorks = new FabricLabWorks();
-        collection = fabricLabWorks.getTestingMaterial();
+        readCollectionFromConfig();
     }
     public Editor(String filename) {
+        readCollectionFromFile(filename);
+    }
+
+    private void readCollectionFromFile(String filename) {
         try {
             ObjectMapper mapper = new ObjectMapper();
             collection = mapper.readValue(Paths.get(filename).toFile(), HashMap.class);
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            readCollectionFromConfig();
+        }
+    }
+
+    private void readCollectionFromConfig() {
+        PropertiesGetter propertiesGetter = new PropertiesGetter();
+        try {
+            readCollectionFromFile(propertiesGetter.getInputFileName());
+        } catch (IOException e) {
+            FabricLabWorks labWorks = new FabricLabWorks();
+            collection = labWorks.getTestingMaterial();
         }
     }
 
