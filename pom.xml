@@ -73,12 +73,8 @@
                             <goal>test</goal>
                         </goals>
                         <configuration>
-                            <excludes>
-                                <exclude>test_manual_cli.OutputTest</exclude>
-                            </excludes>
                             <includes>
-                                <include>commands.HelpTest</include>
-                                <include>commands.HistoryTest</include>
+                                <include>test_inputdata.TestInputDataCoordinateX</include>
                             </includes>
                         </configuration>
                     </execution>

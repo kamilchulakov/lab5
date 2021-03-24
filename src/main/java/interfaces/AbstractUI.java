@@ -1,6 +1,7 @@
 package interfaces;
 
 import henchmen.Validator;
+import input_exceptions.LessThanException;
 import input_exceptions.MoreThanException;
 import logic.CMDManager;
 import logic.Editor;
@@ -200,6 +201,9 @@ public abstract class AbstractUI implements UI{
             } catch (MoreThanException e) {
                 logger.warn("More than exception for X.");
                 display("Error","Invalid coordinateX! Can't be more than " + e.getNumber());
+            } catch (LessThanException e) {
+                logger.warn("Less than exception for X.");
+                display("Error","Invalid coordinateX! Can't be less than " + e.getNumber());
             } catch (Exception e) {
                 logger.error("Unhandled exception for X: " + e.getMessage());
                 display("Error","Invalid coordinateX!");
@@ -218,7 +222,10 @@ public abstract class AbstractUI implements UI{
             } catch (NumberFormatException e) {
                 logger.error("Number format exception for Y.");
                 display("Error", "Invalid coordinateY! Check number format.");
-            } catch (Exception e) {
+            } catch (LessThanException e) {
+                logger.warn("Less than exception for Y.");
+                display("Error","Invalid coordinateY! Can't be less than " + e.getNumber());
+            }catch (Exception e) {
                 logger.error("Unhandled exception: " + e.getMessage());
                 display("Error","Invalid coordinateY!");
             }

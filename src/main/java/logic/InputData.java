@@ -1,5 +1,6 @@
 package logic;
 
+import input_exceptions.LessThanZeroException;
 import input_exceptions.MoreThanException;
 import objects.Coordinates;
 import objects.Difficulty;
@@ -36,8 +37,9 @@ public class InputData {
         return coordinateX;
     }
 
-    public void setCoordinateX(float coordinateX) throws MoreThanException {
-        if (coordinateX > 71) throw new MoreThanException(71);
+    public void setCoordinateX(float coordinateX) throws MoreThanException, LessThanZeroException {
+        if (coordinateX > 71.0) throw new MoreThanException(71);
+        else if (coordinateX < 0.0) throw new LessThanZeroException();
         this.coordinateX = coordinateX;
     }
 
@@ -45,8 +47,9 @@ public class InputData {
         return coordinateY;
     }
 
-    public void setCoordinateY(float coordinateY) throws MoreThanException {
-        if (coordinateX > 556) throw new MoreThanException(556);
+    public void setCoordinateY(float coordinateY) throws MoreThanException, LessThanZeroException {
+        if (coordinateY > 556.0) throw new MoreThanException(556);
+        else if (coordinateY < 0.0) throw new LessThanZeroException();
         this.coordinateY = coordinateY;
     }
 
