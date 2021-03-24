@@ -1,6 +1,7 @@
 package interfaces;
 
 import henchmen.Validator;
+import input_exceptions.CancelException;
 import input_exceptions.LessThanException;
 import input_exceptions.MoreThanException;
 import logic.CMDManager;
@@ -40,11 +41,13 @@ public abstract class AbstractUI implements UI{
             }
             else {
                 String pureCommand = input.split(" ")[0];
-                InputData inputData = getInputData(input, pureCommand);
-                OutputData result = cmdManager.execute(editor, pureCommand, inputData);
-                logger.info("This is result status: " + result.getStatusMessage());
-                logger.info("This is result:\n" + result.getResultMessage());
-                display(result.getStatusMessage(), result.getResultMessage());
+                try {
+                    InputData inputData = getInputData(input, pureCommand);
+                    OutputData result = cmdManager.execute(editor, pureCommand, inputData);
+                    logger.info("This is result status: " + result.getStatusMessage());
+                    logger.info("This is result:\n" + result.getResultMessage());
+                    display(result.getStatusMessage(), result.getResultMessage());
+                } catch (CancelException ignored) {}
             }
 
         }
@@ -60,7 +63,7 @@ public abstract class AbstractUI implements UI{
             return "";
         }
     }
-    private InputData getInputData(String input, String pureCommand) {
+    private InputData getInputData(String input, String pureCommand) throws CancelException {
         logger.info("Getting input data.");
         InputData inputData = new InputData();
         boolean[] flags = validator.getInputDataFlagsForCommand(pureCommand);
@@ -141,9 +144,11 @@ public abstract class AbstractUI implements UI{
             }
             else {
                 String pureCommand = input.split(" ")[0];
-                InputData inputData = getInputData(input, pureCommand);
-                OutputData result = cmdManager.execute(editor, pureCommand, inputData);
-                display(result.getStatusMessage(), result.getResultMessage());
+                try {
+                    InputData inputData = getInputData(input, pureCommand);
+                    OutputData result = cmdManager.execute(editor, pureCommand, inputData);
+                    display(result.getStatusMessage(), result.getResultMessage());
+                } catch (CancelException ignored) {};
             }
         }
     }
@@ -180,19 +185,22 @@ public abstract class AbstractUI implements UI{
         }
         logger.info("Got command arg.");
     }
-    private void setLabNameToInputDataLoop(InputData inputData) {
+    private void setLabNameToInputDataLoop(InputData inputData) throws CancelException {
         while (true) {
             try {
                 inputData.setLabName(askForArg("labwork name"));
                 logger.info("Got labwork name.");
                 break;
+            } catch (NullPointerException e) {
+                logger.info("Everything is okay, but cancel was pushed.");
+                throw new CancelException();
             } catch (Exception e) {
                 logger.warn("Invalid labwork name.");
                 display("Error","Invalid labwork name! Can't be null.");
             }
         }
     }
-    private void setCorXToInputDataLoop(InputData inputData) {
+    private void setCorXToInputDataLoop(InputData inputData) throws CancelException {
         while (true) {
             try {
                 inputData.setCoordinateX(Float.parseFloat(askForArg("coordinateX")));
@@ -204,13 +212,16 @@ public abstract class AbstractUI implements UI{
             } catch (LessThanException e) {
                 logger.warn("Less than exception for X.");
                 display("Error","Invalid coordinateX! Can't be less than " + e.getNumber());
+            } catch (NullPointerException e) {
+                logger.info("Everything is okay, but cancel was pushed.");
+                throw new CancelException();
             } catch (Exception e) {
                 logger.error("Unhandled exception for X: " + e.getMessage());
                 display("Error","Invalid coordinateX!");
             }
         }
     }
-    private void setCorYToInputDataLoop(InputData inputData) {
+    private void setCorYToInputDataLoop(InputData inputData) throws CancelException {
         while (true) {
             try {
                 inputData.setCoordinateY(Float.parseFloat(askForArg("coordinateY")));
@@ -225,13 +236,16 @@ public abstract class AbstractUI implements UI{
             } catch (LessThanException e) {
                 logger.warn("Less than exception for Y.");
                 display("Error","Invalid coordinateY! Can't be less than " + e.getNumber());
-            }catch (Exception e) {
+            } catch (NullPointerException e) {
+                logger.info("Everything is okay, but cancel was pushed.");
+                throw new CancelException();
+            } catch (Exception e) {
                 logger.error("Unhandled exception: " + e.getMessage());
                 display("Error","Invalid coordinateY!");
             }
         }
     }
-    private void setMinimalPointToInputDataLoop(InputData inputData) {
+    private void setMinimalPointToInputDataLoop(InputData inputData) throws CancelException {
         while (true) {
             try {
                 inputData.setMinimalPoint(Long.parseLong(askForArg("minimal point")));
@@ -240,42 +254,57 @@ public abstract class AbstractUI implements UI{
             } catch (NumberFormatException e) {
                 logger.error("Number format exception for minimal point.");
                 display("Error", "Invalid minimal! Check number format.");
-            } catch (Exception e) {
+            } catch (NullPointerException e) {
+                logger.info("Everything is okay, but cancel was pushed.");
+                throw new CancelException();
+            }  catch (Exception e) {
                 logger.error("Unhandled exception: " + e.getMessage());
                 display("Error","Invalid minimal point! Can't be less than 1.");
             }
         }
     }
-    private void setDifficultyToInputDataLoop(InputData inputData) {
+    private void setDifficultyToInputDataLoop(InputData inputData) throws CancelException {
         while (true) {
             try {
                 inputData.setDifficulty(askForArg("Difficulty: EASY, IMPOSSIBLE or TERRIBLE"));
                 logger.info("Got difficulty.");
                 break;
+            } catch (IllegalArgumentException e) {
+                logger.error("IllegalArgument exception: " + e.getMessage());
+                display("Error", "Invalid difficulty! Must be easy, impossible or terrible.");
+            } catch (NullPointerException e) {
+                logger.info("Everything is okay, but cancel was pushed.");
+                throw new CancelException();
             } catch (Exception e) {
                 logger.error("Unhandled exception: " + e.getMessage());
-                display("Error","Invalid difficulty! Must be easy, impossible or terrible.");
+                display("Error","Something is wrong.");
             }
         }
     }
-    private void setDiscNameToInputDataLoop(InputData inputData) {
+    private void setDiscNameToInputDataLoop(InputData inputData) throws CancelException {
         while (true) {
             try {
                 inputData.setDisciplineName(askForArg("discipline name"));
                 logger.info("Got discipline name.");
                 break;
+            } catch (NullPointerException e) {
+                logger.info("Everything is okay, but cancel was pushed.");
+                throw new CancelException();
             } catch (Exception e) {
                 logger.error("Unhandled exception: " + e.getMessage());
                 display("Error","Invalid discipline name! Can't be null.");
             }
         }
     }
-    private void setDiscHoursToInputDataLoop(InputData inputData) {
+    private void setDiscHoursToInputDataLoop(InputData inputData) throws CancelException {
         while (true) {
             try {
                 inputData.setSelfStudyHours(Long.parseLong(askForArg("study hours")));
                 logger.info("Got discipline hours.");
                 break;
+            } catch (NullPointerException e) {
+                logger.info("Everything is okay, but cancel was pushed.");
+                throw new CancelException();
             } catch (Exception e) {
                 logger.error("Unhandled exception: " + e.getMessage());
                 display("Error","Invalid study hours. Can't be null.");

@@ -1,5 +1,6 @@
 package logic;
 
+import input_exceptions.CancelException;
 import input_exceptions.LessThanZeroException;
 import input_exceptions.MoreThanException;
 import objects.Coordinates;
@@ -29,7 +30,9 @@ public class InputData {
         return labName;
     }
 
-    public void setLabName(String labName) {
+    public void setLabName(String labName) throws Exception {
+        if (labName.isEmpty()) throw new CancelException();
+        else if (labName.equals(" ") | labName.trim().equals("")) throw new Exception();
         this.labName = labName;
     }
 
