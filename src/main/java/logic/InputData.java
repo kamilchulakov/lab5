@@ -60,7 +60,10 @@ public class InputData {
         return minimalPoint;
     }
 
-    public void setMinimalPoint(Long minimalPoint) {
+    public void setMinimalPoint(String minimalPointString) throws LessThanZeroException {
+        if (minimalPointString == null) throw new CancelException();
+        long minimalPoint = Long.parseLong(minimalPointString);
+        if (minimalPoint < 0) throw new LessThanZeroException();
         this.minimalPoint = minimalPoint;
     }
 

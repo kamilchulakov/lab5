@@ -248,16 +248,19 @@ public abstract class AbstractUI implements UI{
     private void setMinimalPointToInputDataLoop(InputData inputData) throws CancelException {
         while (true) {
             try {
-                inputData.setMinimalPoint(Long.parseLong(askForArg("minimal point")));
+                inputData.setMinimalPoint(askForArg("minimal point"));
                 logger.info("Got minimal point.");
                 break;
-            } catch (NumberFormatException e) {
-                logger.error("Number format exception for minimal point.");
-                display("Error", "Invalid minimal! Check number format.");
             } catch (NullPointerException e) {
                 logger.info("Everything is okay, but cancel was pushed.");
                 throw new CancelException();
-            }  catch (Exception e) {
+            } catch (NumberFormatException e) {
+                logger.error("Number format exception for minimal point.");
+                display("Error", "Invalid minimal! Check number format.");
+            } catch (LessThanException e) {
+                logger.warn("Less than exception for minimal point.");
+                display("Error","Invalid minimal point! Can't be less than " + e.getNumber());
+            } catch (Exception e) {
                 logger.error("Unhandled exception: " + e.getMessage());
                 display("Error","Invalid minimal point! Can't be less than 1.");
             }
