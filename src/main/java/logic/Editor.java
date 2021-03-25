@@ -7,6 +7,7 @@ import henchmen.PropertiesGetter;
 import objects.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -31,6 +32,9 @@ public class Editor {
             file.setReadable(true);
             collection = mapper.readValue(file, HashMap.class);
 
+        } catch (FileNotFoundException e) {
+            System.out.println("Invalid filename.");
+            System.exit(0);
         } catch (Exception ex) {
             ex.printStackTrace();
             readCollectionFromConfig();

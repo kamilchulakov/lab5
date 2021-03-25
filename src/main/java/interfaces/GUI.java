@@ -7,9 +7,19 @@ import logic.Editor;
 import javax.swing.*;
 import java.util.ArrayList;
 
+/**
+ * Provides working GUI interface.
+ */
 public class GUI extends AbstractUI{
+    /**
+     * JFrame is a base of Swing GUI.
+     */
     JFrame frame;
 
+    /**
+     * Class constructor with collection filename.
+     * @param filename is name of a json file.
+     */
     public GUI(String filename) {
         cmdManager = new CMDManager();
         editor = new Editor(filename);
@@ -18,6 +28,9 @@ public class GUI extends AbstractUI{
         createUI();
     }
 
+    /**
+     * Class constructor.
+     */
     public GUI() {
         super();
     }
@@ -66,6 +79,12 @@ public class GUI extends AbstractUI{
                     message, status, JOptionPane.PLAIN_MESSAGE);
     }
 
+    /**
+     * Provides any input.
+     * @param heading is a heading of input dialog.
+     * @param basicValue is a value in input dialog.
+     * @return String input
+     */
     private String getInput(String heading, String basicValue) {
         return JOptionPane.showInputDialog(heading, basicValue);
     }

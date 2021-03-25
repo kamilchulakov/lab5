@@ -488,3 +488,4 @@ Command was not found. Try again.
 2021-03-25 10:39:01.356 [main] INFO  main.Main - Didn't find an arg: infile.
 2021-03-25 10:48:41.489 [main] INFO  main.Main - Found an arg: collection.json.
 
+2021-03-25 11:47:05.711 [main] INFO  main.Main - Didn't find an arg: infile.

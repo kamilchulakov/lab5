@@ -7,9 +7,19 @@ import logic.Editor;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Provides working CLI interface.
+ */
 public class CLI extends AbstractUI{
+    /**
+     * Scanner is a base of CLI.
+     */
     public Scanner scanner;
 
+    /**
+     * Class constructor with collection filename.
+     * @param filename is a name of a json file.
+     */
     public CLI(String filename) {
         cmdManager = new CMDManager();
         editor = new Editor(filename);
@@ -18,6 +28,9 @@ public class CLI extends AbstractUI{
         createUI();
     }
 
+    /**
+     * Class constructor.
+     */
     public CLI() {
         super();
     }
@@ -44,6 +57,10 @@ public class CLI extends AbstractUI{
         System.out.printf("-------------------\nStatus: %s\nMessage: %s\n------------------\n", status, message);
     }
 
+    /**
+     * Provides any input.
+     * @return String input
+     */
     private String getInput() {
         return scanner.nextLine();
     }
