@@ -21,6 +21,7 @@ public abstract class AbstractUI implements UI{
     Editor editor;
     Validator validator;
     ArrayList<String> cachedFilenames;
+    boolean inputDataFlag = true;
 
     public AbstractUI() {
         cmdManager = new CMDManager();
@@ -65,7 +66,7 @@ public abstract class AbstractUI implements UI{
     }
     private InputData getInputData(String input, String pureCommand) throws CancelException {
         logger.info("Getting input data.");
-        InputData inputData = new InputData();
+        InputData inputData = new InputData(inputDataFlag);
         boolean[] flags = validator.getInputDataFlagsForCommand(pureCommand);
         if (needsArg(flags)) {
             setArgToInputDataLoop(input, inputData);
@@ -91,7 +92,7 @@ public abstract class AbstractUI implements UI{
         if (needsDiscHours(flags)) {
             setDiscHoursToInputDataLoop(inputData);
         }
-        if (inputData.equals(new InputData())) logger.info("No input data was provided.");
+        if (inputData.equals(new InputData(inputDataFlag))) logger.info("No input data was provided.");
         return inputData;
     }
 

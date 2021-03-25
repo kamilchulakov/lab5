@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 public class TestInputDataCoordinateX {
-    InputData inputData = new InputData();
+    InputData inputData = new InputData(false);
     @Test
     public void testMaxLong() {
         try {

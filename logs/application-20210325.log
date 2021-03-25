@@ -352,3 +352,136 @@ It is not cool: IOException.
 2021-03-25 03:43:48.181 [main] INFO  interfaces.UI - This is result status: Success
 2021-03-25 03:43:48.181 [main] INFO  interfaces.UI - This is result:
 Saved into collection2.json!
+2021-03-25 03:48:01.355 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:48:28.693 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:48:38.223 [main] INFO  interfaces.UI - Got a valid command: show
+2021-03-25 03:48:38.223 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:48:38.226 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-25 03:48:38.226 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 03:48:38.228 [main] INFO  logic.CMDManager - Executed command.
+2021-03-25 03:48:38.228 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-25 03:48:38.228 [main] INFO  interfaces.UI - This is result:
+{1={id=7, name=proga, coordinates={x=1.0, y=2.0}, creationDate={year=2021, month=MARCH, monthValue=3, dayOfMonth=15, chronology={id=ISO, calendarType=iso8601}, dayOfWeek=MONDAY, leapYear=false, dayOfYear=74, era=CE}, minimalPoint=2, difficulty=EASY, discipline={name=java, selfStudyHours=10}}, 2={id=15, name=proga, coordinates={x=1.0, y=2.0}, creationDate={year=2021, month=MARCH, monthValue=3, dayOfMonth=15, chronology={id=ISO, calendarType=iso8601}, dayOfWeek=MONDAY, leapYear=false, dayOfYear=74, era=CE}, minimalPoint=10, difficulty=IMPOSSIBLE, discipline={name=java, selfStudyHours=10}}}
+2021-03-25 03:49:24.850 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:49:33.508 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 03:49:35.738 [main] INFO  interfaces.UI - Got a valid command: help
+2021-03-25 03:49:35.739 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:49:35.741 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-25 03:49:35.742 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 03:49:35.742 [main] INFO  logic.CMDManager - Executed command.
+2021-03-25 03:49:35.742 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-25 03:49:35.742 [main] INFO  interfaces.UI - This is result:
+help - a command which gives an information about
+every single command which is supported in this app.
+history - a command to show history of commands usage!
+exit - a command to exit everything.
+show - a command which shows the collection items
+info - a command to get info about the collection:
+ type, time, etc
+remove_key <key> - a command which removes an element by key.
+clear - a command to clear the collection.
+remove_lower <key> - a command which removes the elements
+which are lower than <key> one.
+execute_script <filename> - a command which executes a script.
+average_of_minimal_point - a command which show an average
+ minimal point field value of collection items.
+print_field_descending_difficulty - a command which prints descending difficulty.
+remove_any_by_discipline <discipline> - a command to remove by disc.
+insert <key> - a command which asks to give element info and inserts it by key.
+update <id> - a command which updates element values by id.
+replace_if_lower <key> - a command which removes element if lower than provided.
+save - a command which saves the collection into collection.json
+
+2021-03-25 03:49:45.070 [main] WARN  interfaces.UI - Got an invalid command.
+2021-03-25 03:49:45.071 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:49:45.071 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-25 03:49:45.072 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 03:49:45.072 [main] ERROR logic.CMDManager - Command was not found.
+2021-03-25 03:49:45.072 [main] INFO  interfaces.UI - This is result status: Error
+2021-03-25 03:49:45.073 [main] INFO  interfaces.UI - This is result:
+Command was not found. Try again.
+2021-03-25 03:49:51.685 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 03:49:51.686 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:49:51.686 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 03:49:55.623 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 03:50:02.597 [main] WARN  interfaces.UI - Got an invalid command.
+2021-03-25 03:50:02.597 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:50:02.597 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-25 03:50:02.597 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 03:50:02.597 [main] ERROR logic.CMDManager - Command was not found.
+2021-03-25 03:50:02.597 [main] INFO  interfaces.UI - This is result status: Error
+2021-03-25 03:50:02.597 [main] INFO  interfaces.UI - This is result:
+Command was not found. Try again.
+2021-03-25 03:51:19.994 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 03:51:22.721 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 03:51:22.721 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:51:22.724 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 03:51:26.193 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 03:51:47.952 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:51:52.714 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 03:51:55.108 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 03:51:55.109 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:51:55.112 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 03:51:56.948 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 03:52:23.581 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:53:15.584 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 03:53:18.908 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 03:53:18.909 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:53:18.911 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 03:53:19.958 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 04:01:13.718 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 04:01:22.556 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 04:01:33.335 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 04:01:33.336 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 04:01:33.338 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 04:01:34.879 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 04:02:17.307 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 04:02:22.124 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 04:02:25.564 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 04:02:25.565 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 04:02:25.567 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 04:02:26.500 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 04:04:05.724 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 04:04:09.090 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 04:04:09.091 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 04:04:09.094 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 04:04:09.977 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 04:04:49.819 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 04:04:53.982 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 04:04:53.982 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 04:04:53.985 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 04:04:55.831 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 04:05:05.463 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 04:06:23.336 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 04:06:26.801 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 04:06:26.802 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 04:06:26.804 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 04:06:28.140 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 04:07:02.500 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 04:07:05.083 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 04:07:05.083 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 04:07:05.086 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 04:07:06.546 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 04:13:57.737 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 04:14:02.753 [main] INFO  main.Main - Found an arg: collection.json.
+
+2021-03-25 04:14:07.687 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 04:14:07.687 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 04:14:07.689 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 04:14:09.348 [main] WARN  interfaces.UI - Invalid labwork name.
+2021-03-25 04:14:40.865 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 04:14:45.166 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 04:14:45.167 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 04:14:45.169 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 04:14:46.010 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.

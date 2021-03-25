@@ -10,10 +10,10 @@ public class Main {
         UI ui;
         try {
             logger.info(String.format("Found an arg: %s.%n", args[0]));
-            ui = new GUI(args[0]);
+            ui = new CLI(args[0]);
         } catch (ArrayIndexOutOfBoundsException e) {
             logger.info("Didn't find an arg: infile.");
-            ui = new GUI();
+            ui = new CLI();
         }
         ui.run();
     }

@@ -9,7 +9,7 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 public class TestInputDataMinimalPoint {
-    InputData inputData = new InputData();
+    InputData inputData = new InputData(false);
     @Test
     public void testNull() {
         try {

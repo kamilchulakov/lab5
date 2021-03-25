@@ -1,9 +1,26 @@
 package interfaces;
 
+import henchmen.Validator;
+import logic.CMDManager;
+import logic.Editor;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CLI extends AbstractUI{
     public Scanner scanner;
+
+    public CLI(String filename) {
+        cmdManager = new CMDManager();
+        editor = new Editor(filename);
+        cachedFilenames = new ArrayList<>();
+        validator = new Validator();
+        createUI();
+    }
+
+    public CLI() {
+        super();
+    }
 
     @Override
     protected String getArg(String arg) {
@@ -24,7 +41,7 @@ public class CLI extends AbstractUI{
 
     @Override
     public void display(String status, String message) {
-        System.out.printf("-------------\nStatus: %s\nMessage: %s\n------------\n", status, message);
+        System.out.printf("-------------------\nStatus: %s\nMessage: %s\n------------------\n", status, message);
     }
 
     private String getInput() {

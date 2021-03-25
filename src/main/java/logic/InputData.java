@@ -9,6 +9,7 @@ import objects.Difficulty;
 import java.util.Objects;
 
 public class InputData {
+    private boolean flagOfCLI;
     private String commandArg; //Поле может быть null Строка не может быть пустой
     private String labName; //Поле не может быть null Строка не может быть пустой
     private float coordinateX; //Максимальное значение поля: 71 Поле может быть null
@@ -17,6 +18,10 @@ public class InputData {
     private Difficulty difficulty; //Поле не может быть null
     private String disciplineName; //Поле не может быть null Строка не может быть пустой
     private Long selfStudyHours; //Поле может быть null
+
+    public InputData(boolean flag) {
+        flagOfCLI = flag;
+    }
 
     public String getCommandArg() {
         return commandArg;
@@ -31,8 +36,11 @@ public class InputData {
     }
 
     public void setLabName(String labName) throws Exception {
-        if (labName.isEmpty()) throw new CancelException();
-        else if (labName.equals(" ") | labName.trim().equals("")) throw new Exception();
+        if (labName.isEmpty()) {
+            if (!flagOfCLI) throw new CancelException();
+            else throw new Exception();
+        }
+        else if (labName.equals(" ") | labName.trim().equals("") | labName.equals(System.getProperty("line.separator"))) throw new Exception();
         this.labName = labName;
     }
 

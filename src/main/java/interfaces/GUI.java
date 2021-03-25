@@ -34,6 +34,7 @@ public class GUI extends AbstractUI{
 
     @Override
     protected void createUI() {
+        inputDataFlag = false;
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
