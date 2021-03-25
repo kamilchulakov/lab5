@@ -3,6 +3,7 @@ package logic;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import henchmen.PropertiesGetter;
 import objects.*;
 
@@ -34,6 +35,9 @@ public class Editor {
 
         } catch (FileNotFoundException e) {
             System.out.println("Invalid filename.");
+            System.exit(0);
+        } catch (MismatchedInputException e) {
+            System.out.println("Invalid json.");
             System.exit(0);
         } catch (Exception ex) {
             ex.printStackTrace();
