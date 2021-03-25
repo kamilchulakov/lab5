@@ -485,3 +485,6 @@ Command was not found. Try again.
 2021-03-25 04:14:45.167 [main] INFO  interfaces.UI - Getting input data.
 2021-03-25 04:14:45.169 [main] INFO  interfaces.UI - Got command arg.
 2021-03-25 04:14:46.010 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 10:39:01.356 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 10:48:41.489 [main] INFO  main.Main - Found an arg: collection.json.
+
