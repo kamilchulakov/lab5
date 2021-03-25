@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import henchmen.PropertiesGetter;
 import objects.*;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -26,9 +27,12 @@ public class Editor {
     private void readCollectionFromFile(String filename) {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            collection = mapper.readValue(Paths.get(filename).toFile(), HashMap.class);
+            File file = Paths.get(filename).toFile();
+            file.setReadable(true);
+            collection = mapper.readValue(file, HashMap.class);
 
         } catch (Exception ex) {
+            ex.printStackTrace();
             readCollectionFromConfig();
         }
     }
@@ -120,7 +124,9 @@ public class Editor {
     public void save(String filename) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
-        writer.writeValue(new FileOutputStream(Paths.get(filename).toFile()), collection);
+        File file = Paths.get(filename).toFile();
+        file.setWritable(true);
+        writer.writeValue(new FileOutputStream(file), collection);
     }
 
     public void removeIfLower(String key, LabWork labWork) {
