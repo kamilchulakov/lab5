@@ -1,0 +1,325 @@
+2021-03-25 01:13:59.733 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 01:22:15.660 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 01:23:26.363 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 01:24:07.179 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 01:39:16.881 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 01:44:04.174 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 01:44:51.353 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 01:49:43.081 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 01:58:35.570 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 01:58:40.070 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 01:58:40.071 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 01:58:40.073 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 01:58:44.149 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 01:58:46.460 [main] WARN  interfaces.UI - More than exception for X.
+2021-03-25 01:58:50.261 [main] WARN  interfaces.UI - Less than exception for X.
+2021-03-25 01:58:52.492 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 01:58:56.152 [main] WARN  interfaces.UI - More than exception for Y.
+2021-03-25 01:58:59.282 [main] WARN  interfaces.UI - Less than exception for Y.
+2021-03-25 01:59:01.334 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 01:59:02.887 [main] INFO  interfaces.UI - Got minimal point.
+2021-03-25 01:59:05.754 [main] INFO  interfaces.UI - Got difficulty.
+2021-03-25 01:59:07.161 [main] INFO  interfaces.UI - Got discipline name.
+2021-03-25 01:59:08.338 [main] INFO  interfaces.UI - Got discipline hours.
+2021-03-25 01:59:08.339 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 01:59:08.353 [main] INFO  logic.CMDManager - Executed command.
+2021-03-25 01:59:08.353 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-25 01:59:08.353 [main] INFO  interfaces.UI - This is result:
+Inserted.
+2021-03-25 02:04:39.133 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:05:06.853 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:06:54.289 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:07:01.005 [main] INFO  interfaces.UI - Got a valid command: insert 4
+2021-03-25 02:07:01.006 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:07:01.009 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:07:02.513 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:07:04.622 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:07:05.082 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:07:05.687 [main] INFO  interfaces.UI - Got minimal point.
+2021-03-25 02:07:06.304 [main] ERROR interfaces.UI - Unhandled exception: No enum constant objects.Difficulty.12
+2021-03-25 02:07:16.174 [main] ERROR interfaces.UI - Unhandled exception: Name is null
+2021-03-25 02:07:18.458 [main] ERROR interfaces.UI - Unhandled exception: Name is null
+2021-03-25 02:07:21.648 [main] ERROR interfaces.UI - Unhandled exception: Name is null
+2021-03-25 02:07:27.447 [main] ERROR interfaces.UI - Unhandled exception: Name is null
+2021-03-25 02:09:27.901 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:09:31.401 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 02:09:31.401 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:09:31.404 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:09:32.757 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:09:34.288 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:09:34.832 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:09:35.579 [main] INFO  interfaces.UI - Got minimal point.
+2021-03-25 02:09:38.999 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty.
+2021-03-25 02:09:57.389 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:10:08.233 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 02:10:08.233 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:10:08.234 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:10:09.946 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:10:10.626 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:10:11.199 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:10:11.849 [main] INFO  interfaces.UI - Got minimal point.
+2021-03-25 02:10:13.333 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty.12
+2021-03-25 02:10:23.603 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty.12
+2021-03-25 02:10:31.545 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty. 
+2021-03-25 02:10:33.742 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty. 
+2021-03-25 02:10:35.674 [main] ERROR interfaces.UI - Unhandled exception: Name is null
+2021-03-25 02:16:53.419 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:17:22.140 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:17:28.302 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:17:28.302 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:17:28.304 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:17:32.123 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:17:33.603 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:17:35.184 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:17:37.124 [main] INFO  interfaces.UI - Got minimal point.
+2021-03-25 02:17:38.401 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:17:40.759 [main] INFO  interfaces.UI - Got a valid command: help
+2021-03-25 02:17:40.760 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:17:40.761 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-25 02:17:40.761 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 02:17:40.763 [main] INFO  logic.CMDManager - Executed command.
+2021-03-25 02:17:40.763 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-25 02:17:40.763 [main] INFO  interfaces.UI - This is result:
+help - a command which gives an information about
+every single command which is supported in this app.
+history - a command to show history of commands usage!
+exit - a command to exit everything.
+show - a command which shows the collection items
+info - a command to get info about the collection:
+ type, time, etc
+remove_key <key> - a command which removes an element by key.
+clear - a command to clear the collection.
+remove_lower <key> - a command which removes the elements
+which are lower than <key> one.
+execute_script <filename> - a command which executes a script.
+average_of_minimal_point - a command which show an average
+ minimal point field value of collection items.
+print_field_descending_difficulty - a command which prints descending difficulty.
+remove_any_by_discipline <discipline> - a command to remove by disc.
+insert <key> - a command which asks to give element info and inserts it by key.
+update <id> - a command which updates element values by id.
+replace_if_lower <key> - a command which removes element if lower than provided.
+save - a command which saves the collection into collection.json
+
+2021-03-25 02:17:47.051 [main] INFO  interfaces.UI - Got a valid command: history
+2021-03-25 02:17:47.051 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:17:47.052 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-25 02:17:47.052 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 02:17:47.053 [main] INFO  logic.CMDManager - Recognized history.
+2021-03-25 02:17:47.053 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-25 02:17:47.053 [main] INFO  interfaces.UI - This is result:
+help
+history
+
+2021-03-25 02:19:15.443 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:19:19.425 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:19:19.426 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:19:19.429 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:19:20.164 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:19:21.376 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:20:27.064 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:20:34.051 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:20:34.051 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:20:34.054 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:20:38.247 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:20:42.632 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:21:28.028 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:21:34.807 [main] INFO  interfaces.UI - Got a valid command: insert 4
+2021-03-25 02:21:34.808 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:21:34.811 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:21:40.971 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:21:43.875 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:21:55.981 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:22:00.681 [main] INFO  interfaces.UI - Got a valid command: insert 4
+2021-03-25 02:22:00.682 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:22:00.685 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:22:01.426 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:22:05.459 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:22:14.350 [main] INFO  interfaces.UI - Got a valid command: insert 4
+2021-03-25 02:22:14.350 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:22:14.351 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:22:16.690 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:22:20.170 [main] ERROR interfaces.UI - Unhandled exception for X: empty String
+2021-03-25 02:22:22.475 [main] ERROR interfaces.UI - Unhandled exception for X: empty String
+2021-03-25 02:22:25.497 [main] ERROR interfaces.UI - Unhandled exception for X: For input string: "coordinateX"
+2021-03-25 02:22:29.144 [main] ERROR interfaces.UI - Unhandled exception for X: For input string: "1 1"
+2021-03-25 02:22:30.617 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:22:40.596 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:22:50.309 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:24:00.343 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:24:04.893 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 02:24:04.894 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:24:04.897 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:24:06.012 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:24:11.940 [main] INFO  interfaces.UI - Got a valid command: insert 4
+2021-03-25 02:24:11.941 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:24:11.941 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:24:13.560 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:24:22.588 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:24:26.539 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:24:26.540 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:24:26.541 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:24:29.727 [main] WARN  interfaces.UI - Invalid labwork name.
+2021-03-25 02:24:38.924 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:27:08.428 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:27:13.835 [main] INFO  interfaces.UI - Got a valid command: insert 4
+2021-03-25 02:27:13.835 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:27:13.838 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:27:16.408 [main] WARN  interfaces.UI - Invalid labwork name.
+2021-03-25 02:27:19.353 [main] WARN  interfaces.UI - Invalid labwork name.
+2021-03-25 02:27:21.114 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:27:23.137 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:27:27.394 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 02:27:27.395 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:27:27.395 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:27:30.065 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:27:31.315 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:27:36.728 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:27:36.728 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:27:36.729 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:27:37.233 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:48:51.643 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:48:56.106 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:48:56.106 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:48:56.108 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:48:58.021 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:48:58.922 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:48:59.695 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:49:01.197 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:49:05.642 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:49:15.733 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:49:18.048 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:49:20.631 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:50:04.077 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:50:11.414 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:50:11.414 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:50:11.416 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:50:12.425 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:50:13.175 [main] ERROR interfaces.UI - Unhandled exception for X: For input string: "coordinateX"
+2021-03-25 02:50:14.286 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:50:14.873 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:50:18.015 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:50:20.229 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:50:23.549 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:50:29.147 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:50:35.799 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:51:06.831 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:51:27.240 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:51:30.931 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:51:30.931 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:51:30.934 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:51:31.986 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:51:32.799 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:51:33.393 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:51:35.477 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:51:39.809 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 02:51:39.810 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:51:39.810 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:51:42.189 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:51:43.148 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:51:45.577 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:51:46.772 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:56:08.088 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:56:11.451 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:56:11.451 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:56:11.453 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:56:12.429 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:56:13.815 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:56:15.082 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:56:16.975 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:56:19.714 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:57:16.507 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 02:57:19.638 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:57:19.638 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:57:19.640 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:57:20.485 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:57:21.357 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:57:22.042 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:57:24.460 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:57:27.399 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:57:32.647 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 02:57:32.648 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 02:57:32.649 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 02:57:33.727 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 02:57:34.912 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 02:57:36.144 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 02:57:38.607 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:57:42.389 [main] ERROR interfaces.UI - Number format exception for minimal point.
+2021-03-25 02:57:45.933 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 02:58:32.685 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:01:38.945 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:03:43.815 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:08:28.042 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:08:32.830 [main] INFO  interfaces.UI - Got a valid command: insert 4
+2021-03-25 03:08:32.830 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:08:32.834 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 03:08:33.980 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 03:08:35.386 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 03:08:35.991 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 03:08:36.943 [main] INFO  interfaces.UI - Got minimal point.
+2021-03-25 03:08:39.403 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty.E
+2021-03-25 03:08:44.352 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty.EAS
+2021-03-25 03:08:48.035 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty.
+2021-03-25 03:08:53.495 [main] INFO  interfaces.UI - Got difficulty.
+2021-03-25 03:08:55.630 [main] INFO  interfaces.UI - Got discipline name.
+2021-03-25 03:09:00.037 [main] ERROR interfaces.UI - Unhandled exception: For input string: ""
+2021-03-25 03:09:05.417 [main] ERROR interfaces.UI - Unhandled exception: null
+2021-03-25 03:09:07.046 [main] ERROR interfaces.UI - Unhandled exception: null
+2021-03-25 03:13:46.335 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:14:00.262 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:14:16.717 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:14:20.309 [main] INFO  interfaces.UI - Got a valid command: insert 4
+2021-03-25 03:14:20.309 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:14:20.311 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 03:14:21.662 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 03:14:22.180 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 03:14:22.671 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 03:14:23.167 [main] INFO  interfaces.UI - Got minimal point.
+2021-03-25 03:14:25.462 [main] INFO  interfaces.UI - Got difficulty.
+2021-03-25 03:14:26.374 [main] INFO  interfaces.UI - Got discipline name.
+2021-03-25 03:14:31.195 [main] INFO  interfaces.UI - Got discipline hours.
+2021-03-25 03:14:31.195 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 03:14:31.202 [main] INFO  logic.CMDManager - Executed command.
+2021-03-25 03:14:31.202 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-25 03:14:31.202 [main] INFO  interfaces.UI - This is result:
+Inserted.
+2021-03-25 03:16:28.485 [main] INFO  main.Main - Didn't find an arg: infile.
+2021-03-25 03:16:32.164 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 03:16:32.165 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:16:32.167 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 03:16:33.914 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 03:16:36.102 [main] ERROR interfaces.UI - Unhandled exception for X: empty String
+2021-03-25 03:16:40.228 [main] ERROR interfaces.UI - Unhandled exception for X: empty String
+2021-03-25 03:16:48.387 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 03:16:49.389 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 03:16:50.817 [main] INFO  interfaces.UI - Got minimal point.
+2021-03-25 03:16:53.271 [main] INFO  interfaces.UI - Got difficulty.
+2021-03-25 03:16:54.869 [main] INFO  interfaces.UI - Got discipline name.
+2021-03-25 03:16:56.018 [main] INFO  interfaces.UI - Got discipline hours.
+2021-03-25 03:16:56.019 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 03:16:56.047 [main] INFO  logic.CMDManager - Executed command.
+2021-03-25 03:16:56.047 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-25 03:16:56.047 [main] INFO  interfaces.UI - This is result:
+Inserted.
+2021-03-25 03:17:01.268 [main] INFO  interfaces.UI - Got a valid command: show
+2021-03-25 03:17:01.269 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:17:01.269 [main] INFO  interfaces.UI - No input data was provided.
+2021-03-25 03:17:01.270 [main] INFO  logic.CMDManager - Executing command...
+2021-03-25 03:17:01.274 [main] INFO  logic.CMDManager - Executed command.
+2021-03-25 03:17:01.275 [main] INFO  interfaces.UI - This is result status: Success
+2021-03-25 03:17:01.275 [main] INFO  interfaces.UI - This is result:
+{1={id=7, name=proga, coordinates={x=1.0, y=2.0}, creationDate={year=2021, month=MARCH, monthValue=3, dayOfMonth=15, chronology={id=ISO, calendarType=iso8601}, dayOfWeek=MONDAY, leapYear=false, dayOfYear=74, era=CE}, minimalPoint=2, difficulty=EASY, discipline={name=java, selfStudyHours=10}}, 2={id=24, name='labwork name', coordinates={x=1.0, y=2.0}, creationDate={year=2021, month=MARCH, monthValue=3, dayOfMonth=25, chronology={id=ISO, calendarType=iso8601}, dayOfWeek=THURSDAY, leapYear=false, dayOfYear=84, era=CE}, minimalPoint=12, difficulty=EASY, discipline={name='123', selfStudyHours=12}}}
+2021-03-25 03:17:29.552 [main] INFO  interfaces.UI - Got a valid command: insert 3
+2021-03-25 03:17:29.552 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:17:29.553 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 03:17:30.807 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
+2021-03-25 03:17:35.561 [main] INFO  interfaces.UI - Got a valid command: insert 2
+2021-03-25 03:17:35.561 [main] INFO  interfaces.UI - Getting input data.
+2021-03-25 03:17:35.561 [main] INFO  interfaces.UI - Got command arg.
+2021-03-25 03:17:37.391 [main] INFO  interfaces.UI - Got labwork name.
+2021-03-25 03:17:39.106 [main] INFO  interfaces.UI - Got coordinate X.
+2021-03-25 03:17:40.105 [main] INFO  interfaces.UI - Got coordinate Y.
+2021-03-25 03:17:41.693 [main] INFO  interfaces.UI - Got minimal point.
+2021-03-25 03:17:43.204 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty. 
+2021-03-25 03:17:45.967 [main] ERROR interfaces.UI - IllegalArgument exception: No enum constant objects.Difficulty.
+2021-03-25 03:17:49.805 [main] INFO  interfaces.UI - Everything is okay, but cancel was pushed.
