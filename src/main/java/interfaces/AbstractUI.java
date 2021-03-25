@@ -302,7 +302,7 @@ public abstract class AbstractUI implements UI{
     private void setDiscHoursToInputDataLoop(InputData inputData) throws CancelException {
         while (true) {
             try {
-                inputData.setSelfStudyHours(Long.parseLong(askForArg("study hours")));
+                inputData.setSelfStudyHours(askForArg("study hours"));
                 logger.info("Got discipline hours.");
                 break;
             } catch (NullPointerException e) {

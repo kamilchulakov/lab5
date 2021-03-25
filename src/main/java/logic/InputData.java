@@ -87,7 +87,11 @@ public class InputData {
         return selfStudyHours;
     }
 
-    public void setSelfStudyHours(Long selfStudyHours) {
+    public void setSelfStudyHours(String selfStudyHoursString) {
+        if (selfStudyHoursString == null) throw new CancelException();
+        Long selfStudyHours;
+        if (selfStudyHoursString.trim().equals("")) selfStudyHours = null;
+        else selfStudyHours= Long.parseLong (selfStudyHoursString);
         this.selfStudyHours = selfStudyHours;
     }
 
